@@ -1,41 +1,25 @@
-.body{
-    display:block;
-    
-    height: auto;
-    margin: auto;
-    /* min-width:400px; */
-
-    background-color: rgb(255, 167, 4);
-
-
+body{
+    background-color: #292d33;
 }
 
 /* шапка: */
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2em;
-    padding-top: 3em;
+.header h1{
+    padding: 2em 0 3em 0;
+    text-align: center;
 
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 28px;
-    background-color: rgb(255, 255, 255);
-    /* background-size: 500px 1000px;
-    background-position-y: 500px; */
-    outline: 600px solid white;
-
-
-
+    font-family: Roboto, sans-serif;
+    font-size: 46px;
+    color: #fff;
+    font-weight:100;
 }
 
 .main{
-    /* padding: 0 5% 0 5%; */ 
+    /* padding: 0 5% 0 5%; */
     position: relative;
 }
 
 /* секция с картинками: */
-.pic{
+.sec_pic_text{
     display: flex;
     justify-content:center;
     gap: 30px;
@@ -46,6 +30,7 @@
     flex-wrap: wrap;
 }
 /* контейнер с картинками: */
+/* 
 .img_cont{
     width: 400px;
     height: 400px;
@@ -54,9 +39,10 @@
     overflow: clip;
     transition: 0.5s;
     background-color: black;
-}
+} */
 
 /* картинки и их расширение и затемнение при наведении мыши: */
+/* 
 .main_img{
     width: 400px;
     height: 400px;
@@ -69,14 +55,7 @@
 .main_img:hover{
     transform: scale(1.2,1.2);
     opacity: 0.8;
-} 
-
-/* .main_img_fix{
-    width: 400px;
-    height: 400px;
-    min-width: 400px;
-    min-height: 400px;
-} */
+}  */
 
 
 /* подпись под картинками и её ссылки: */
@@ -109,63 +88,29 @@
     border-bottom: 1px solid rgb(177, 177, 177);
 }
 
-.section_old {
-    border-radius: 10px;
-    color: rgb(64 64 64);
-    text-indent: 2em;
-    /* display: flex; */
-    /* width: 80%; */
-
-    
-
-    text-align:justify;
-
-    padding: 1em;
-
-    /* margin: auto; */
-    
-}
-
-.aside {
-    background-color: gainsboro;
-    min-width: 30%;
-    width: 30%;
-    
-    border-radius: 10px 0 0 0;
-    
-    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
-    
-    text-indent: 2em;
-    padding: 1em;
-
-    /* margin: auto; */
-}
-
 /* футер и его ссылки */
 .footer {
     text-align: center;
     padding: 3em;
 
     font-size: 14px;
-    background-color: rgb(95, 51, 51);
-    color: rgb(201, 201, 201);
+    background-color: #333333;
+    color: #ffffff;
 }
 
 .footer a{
-    color: rgb(255, 167, 4);
+    color: #72b8f1;
 }
 
 .footer a:visited{
-    color: rgb(255, 167, 4);
+    color: #72b8f1;
 }
 
 .footer a:active{
-    color: rgb(255, 167, 4);
+    color: #72b8f1;
 }
 
 .footer a:hover{
     text-decoration: none;
+    color: #a1a1a1;
 }
-
-
-/* просмотр фото: */

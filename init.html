@@ -1,55 +1,3 @@
-<!-- main>h1{Emmet}+(ul>li{Быстрый}+li{Удобный}+li{Нескучные обои})+p{Emmet помогает мне писать верстку быстрее}*10
-
-*magic*
-
-<main>
-  <h1>Emmet</h1>
-  <ul>
-    <li>Быстрый</li>
-    <li>Удобный</li>
-    <li>Нескучные обои</li>
-  </ul>
-  <p>Emmet помогает мне писать верстку быстрее</p>
-  <p>Emmet помогает мне писать верстку быстрее</p>
-  <p>Emmet помогает мне писать верстку быстрее</p>
-  <p>Emmet помогает мне писать верстку быстрее</p>
-  <p>Emmet помогает мне писать верстку быстрее</p>
-  <p>Emmet помогает мне писать верстку быстрее</p>
-  <p>Emmet помогает мне писать верстку быстрее</p>
-  <p>Emmet помогает мне писать верстку быстрее</p>
-  <p>Emmet помогает мне писать верстку быстрее</p>
-  <p>Emmet помогает мне писать верстку быстрее</p>
-</main>
-
---------------------------
-
-section.cards>article.card>div.card-title{Название товара}+img[src="/images/card-item-1.png"][alt="Товар-1"]+(.card-price>span.price-sum{24 000}+span.price-cur{руб.})+button{Заказать}
-
-
-<section class="cards">
-  <article class="card">
-    <div class="card-title">Название товара</div>
-    <img src="/images/card-item-1.png" alt="Товар-1">
-    <div class="card-price"><span class="price-sum">24 000</span><span class="price-cur">руб.</span></div>
-    <button>Заказать</button>
-  </article>
-</section> -->
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>aside_test</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <p class="pst">текст содержания</p>
-  <aside class="asst">текст боковой панели</aside>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,36 +7,37 @@ section.cards>article.card>div.card-title{Название товара}+img[src
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>aside_test</title>
   <link rel="stylesheet" href="my_reset.css"> <!-- сброс стилей -->
+  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="body">
+<body>
   <header class="header">
-    <h1>Our products</h1>
+    <h1>We bake fresh, handmade bread,<br>pastries and cakes every day</h1>
   </header>
   <main class="main">
-    <section class="pic">
-      <div class="img_cont"><img class="main_img" src="./images/bread1.jpg" alt="bread1"></div>
-      <div class="img_cont"><img class="main_img" src="./images/bread2.jpg" alt="bread2"></div>
-      <div class="img_cont"><img class="main_img" src="./images/bread3.jpg" alt="bread3"></div>
-      <div class="img_cont"><img class="main_img" src="./images/bread4.jpg" alt="bread4"></div>
-      <div class="img_cont"><img class="main_img" src="./images/bread5.jpg" alt="bread5"></div>
-      <div class="img_cont"><img class="main_img" src="./images/bread6.jpg" alt="bread6"></div>
-      <div class="img_cont"><img class="main_img" src="./images/bread7.jpg" alt="bread7"></div>
-      <div class="img_cont"><img class="main_img" src="./images/bread8.jpg" alt="bread8"></div>
-      <div class="img_cont"><img class="main_img" src="./images/bread9.jpg" alt="bread9"></div>
-      <!-- <div class="main_img_fix"></div> -->
+    <section class="sec_pic_text">
+      <div class="img_cont"><img src="./images/bread1.jpg" alt="bread1"></div>
+      <div class="img_cont"><img src="./images/bread2.jpg" alt="bread2"></div>
+      <div class="img_cont"><img src="./images/bread3.jpg" alt="bread3"></div>
+      <div class="img_cont"><img src="./images/bread4.jpg" alt="bread4"></div>
+      <div class="img_cont"><img src="./images/bread5.jpg" alt="bread5"></div>
+      <div class="img_cont"><img src="./images/bread6.jpg" alt="bread6"></div>
+      <div class="img_cont"><img src="./images/bread7.jpg" alt="bread7"></div>
+      <div class="img_cont"><img src="./images/bread8.jpg" alt="bread8"></div>
+      <div class="img_cont"><img src="./images/bread9.jpg" alt="bread9"></div>
       
       <!-- версия картинок со ссылками в сети: -->
-      <!-- <div class="img_cont"><img class="main_img" src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/60067c0411e15541880e3293/rre.jpg" alt="bread1"></div>
-      <div class="img_cont"><img class="main_img" src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/c1a914846ece539fab7e5b32/j.jpg" alt="bread2"></div>
-      <div class="img_cont"><img class="main_img" src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/8d95eb12993a55918f0eac4e/trrt.jpg" alt="bread3"></div>
-      <div class="img_cont"><img class="main_img" src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/87222a54c4795e00a497aee4/gh.jpg" alt="bread4"></div>
-      <div class="img_cont"><img class="main_img" src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/adb30bfc53ab5e469ddacf47/ghghe4.jpg" alt="bread5"></div>
-      <div class="img_cont"><img class="main_img" src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/fce79167d3fb51019c22c050/1.jpg" alt="bread6"></div>
-      <div class="img_cont"><img class="main_img" src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/3b11336c5ae8551288a07bf9/medium-shot-person-holding-bread.jpg" alt="bread7"></div>
-      <div class="img_cont"><img class="main_img" src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/7c58da9101dc5087a0c7fa8a/rustic-bread-wood-table-dark-wooden-background_155003-1681.jpg" alt="bread8"></div>
-      <div class="img_cont"><img class="main_img" src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/9765013a9a185d16adf414dd/b1182e8f-cee4-f571-00ff-b553b7f96898.jpg" alt="bread9"></div> -->
+      <!-- <div class="img_cont"><img  src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/60067c0411e15541880e3293/rre.jpg" alt="bread1"></div>
+      <div class="img_cont"><img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/c1a914846ece539fab7e5b32/j.jpg" alt="bread2"></div>
+      <div class="img_cont"><img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/8d95eb12993a55918f0eac4e/trrt.jpg" alt="bread3"></div>
+      <div class="img_cont"><img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/87222a54c4795e00a497aee4/gh.jpg" alt="bread4"></div>
+      <div class="img_cont"><img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/adb30bfc53ab5e469ddacf47/ghghe4.jpg" alt="bread5"></div>
+      <div class="img_cont"><img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/fce79167d3fb51019c22c050/1.jpg" alt="bread6"></div>
+      <div class="img_cont"><img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/3b11336c5ae8551288a07bf9/medium-shot-person-holding-bread.jpg" alt="bread7"></div>
+      <div class="img_cont"><img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/7c58da9101dc5087a0c7fa8a/rustic-bread-wood-table-dark-wooden-background_155003-1681.jpg" alt="bread8"></div>
+      <div class="img_cont"><img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/9765013a9a185d16adf414dd/b1182e8f-cee4-f571-00ff-b553b7f96898.jpg" alt="bread9"></div> -->
     </section>
     <section class="freepic">
       Images from <a href="https://www.freepik.com/">Freepic</a>
