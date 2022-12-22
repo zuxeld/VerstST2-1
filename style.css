@@ -18,28 +18,25 @@ body{
     position: relative;
 }
 
-/* секция с картинками: */
+/* секция с блоками текста и картинок: */
 .sec_pic_text{
-    display: flex;
-    justify-content:center;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    /* justify-content:center; */
     gap: 30px;
     /* align-items:center; */
     /* z-index: -1; */
 
 
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
-/* контейнер с картинками: */
-/* 
-.img_cont{
-    width: 400px;
-    height: 400px;
-    min-width: 400px;
-    min-height: 400px;
+/* контейнеры с картинками и текстом: */
+
+.img_text_cont{
     overflow: clip;
-    transition: 0.5s;
-    background-color: black;
-} */
+    /* transition: 0.5s; */
+
+}
 
 /* картинки и их расширение и затемнение при наведении мыши: */
 /* 
