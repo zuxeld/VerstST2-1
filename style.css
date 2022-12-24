@@ -3,6 +3,7 @@ body{
 
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 30px;
 }
 
 /* шапка: */
@@ -27,42 +28,48 @@ body{
     grid-template-columns:repeat(2, 1fr);
     gap: 30px;
 }
-.revers{
-    flex-direction: row-reverse;
-}
+
 /* контейнеры с картинками и текстом: */
 
 .img_text_cont{
+    width: 100%;
     display: flex;
     align-items: center;
-    /* кастыль вертикального выравнивания(часть 1/2): */
     gap: 20px;
+    /* кастыль вертикального выравнивания(часть 1/2): */
     /* position: relative; */
+}
+.revers{
+    flex-direction: row-reverse;
 }
 
 /* контейнеры с картинками: */
 .img_cont{
-    
+    width: 100%;;
 
-    /* object-fit:contain;
-    object-position: center; */
-    /* object-fit: cover; */
-    /* overflow: hidden; */
+    flex-grow: 1;
+    
+    object-position: center;
+    overflow: hidden;
     
     /* кастыль вертикального выравнивания(часть 2/2): */
+    /* position: relative; */
     /* padding-top: 100%; */
+    aspect-ratio: 1 / 1;
 
 }
 
 /* картинки: */
-/*.img_cont */img{
-    /* width: 100%; */
+.img_cont img{
+    width: 100%;
     /* height: 100%; */
     /* clip-path: circle(50%); */
     /* position: absolute;
     top: 0; */
+    
+    object-fit:contain;
     /* object-position: center; */
-    object-fit: cover;
+    /* aspect-ratio: 1 / 1; */
 
 }
 
@@ -71,6 +78,17 @@ body{
     flex-grow: 1;
 }
 
+@media (max-width: 780px){
+    /* одна грид-колонка: */
+    .sec_pic_text{
+        grid-template-columns:repeat(1, 1fr);
+    }
+
+    /* картинки над текстом: */
+    .img_text_cont{
+        flex-direction:column
+    }
+}
 
 
 
