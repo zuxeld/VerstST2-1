@@ -12,7 +12,7 @@ body{
 }
 
 /* шапка: */
-.header h1{
+/* .header h1{
     padding: 2em 0 3em 0;
     text-align: center;
 
@@ -20,6 +20,10 @@ body{
     font-size: 46px;
     color: #fff;
     font-weight:1;
+} */
+
+.contacts{
+    font-family: Raleway,sans-serif;
 }
 
 .main{
@@ -154,7 +158,21 @@ body{
 
 .main_text {
     color: white;
-} 
+}
+
+/* иконки соцсетей: */
+.soc_icon_cont{
+    display: flex;
+    gap:20px;
+}
+
+
+.soc_icon_cont svg{
+    min-width: 60px;
+    min-height: 60px;
+    fill:#f14a0e;
+}
+
 
 
 /* подпись под картинками и её ссылки: */
