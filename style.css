@@ -1,5 +1,10 @@
+/* у текста форм цвет: #797979 */
+
+
 body{
-    background-color: #292d33;
+    background-image: url(https://images02.nicepagecdn.com/c461c07a441a5d220e8feb1a/892364894fd35bc8867dd5be/wdq-min.jpg);
+    background-repeat: no-repeat;
+    background-color: #000;
 
     max-width: 1110px;
     margin: 0 auto;
@@ -147,6 +152,11 @@ body{
 
 
 
+.main_text {
+    color: white;
+} 
+
+
 /* подпись под картинками и её ссылки: */
 .freepic{
     text-align: center;
@@ -156,25 +166,25 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
     font-size: 16px;
-    color: white;
+    color: #a2b3a2;
 }
 
 .freepic a:link{
-    color: white;
+    color: #a2b3a2;
     text-decoration: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #a2b3a2;
 }
 
 .freepic a:visited{
-    color: white;
+    color: #a2b3a2;
     text-decoration: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #f14a0e;
 }
 
 .freepic a:active{
-    color: white;
+    color: #a2b3a2;
     text-decoration: none;
-    border-bottom: 1px solid rgb(177, 177, 177);
+    border-bottom: 1px solid #f14a0e;
 }
 
 /* футер и его ссылки */
