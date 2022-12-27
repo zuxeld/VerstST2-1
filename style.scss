@@ -1,5 +1,11 @@
 /* у текста форм цвет: #797979 */
 
+// шрифт заголовков:
+$h_font_fam: Raleway, sans-serif;
+// шрифт основного текста:
+$main_font_fam: "Open Sans", sans-serif;;
+
+
 body {
   background: {
     image: url(https://images02.nicepagecdn.com/c461c07a441a5d220e8feb1a/892364894fd35bc8867dd5be/wdq-min.jpg);
@@ -32,19 +38,26 @@ body {
 
   h2 {
     font: {
-      family: Raleway, sans-serif;
+      family: $h_font_fam;
       size: 20px;
     }
     padding: 15px 0 20px 0;
   }
   p {
-    font-family: "Open Sans", sans-serif;
+    font-family: $main_font_fam
   }
 }
 
 .main {
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
+
+
+// ---------------------------------------------------
+// old
+
 
 /* секция с блоками текста и картинок: */
 .sec_pic_text {
@@ -164,6 +177,8 @@ body {
   }
 }
 
+// ---------------------------------------
+
 
 
 /* правая секция с основным текстом:*/
@@ -192,23 +207,26 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-size: 16px;
-  color: #a2b3a2;
-  a:link {
-    color: #a2b3a2;
-    text-decoration: none;
-    border-bottom: 1px solid #a2b3a2;
-  }
-
-  a:visited {
-    color: #a2b3a2;
-    text-decoration: none;
-    border-bottom: 1px solid #f14a0e;
-  }
-
-  a:active {
-    color: #a2b3a2;
-    text-decoration: none;
-    border-bottom: 1px solid #f14a0e;
+  $fp_link_color: #a2b3a2;
+  color: $fp_link_color;
+  a {
+    &:link {
+      color: $fp_link_color;
+      text-decoration: none;
+      border-bottom: 1px solid #a2b3a2;
+    }
+  
+    &:visited {
+      color: $fp_link_color;
+      text-decoration: none;
+      border-bottom: 1px solid #f14a0e;
+    }
+  
+    &:active {
+      color: $fp_link_color;
+      text-decoration: none;
+      border-bottom: 1px solid #f14a0e;
+    }
   }
 }
 
@@ -221,19 +239,20 @@ body {
   background-color: #333333;
   color: #ffffff;
   a {
-    color: #72b8f1;
+    $footer_color: #72b8f1;
+    color: $footer_color;
+    &:visited {
+      color: $footer_color;
+    }
+  
+    &:active {
+      color: $footer_color;
+    }
+  
+    &:hover {
+      text-decoration: none;
+      color: #a1a1a1;
+    }
   }
 
-  a:visited {
-    color: #72b8f1;
-  }
-
-  a:active {
-    color: #72b8f1;
-  }
-
-  a:hover {
-    text-decoration: none;
-    color: #a1a1a1;
-  }
 }
