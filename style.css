@@ -9,16 +9,6 @@ body {
   padding: 310px 25px 0 30px;
 }
 
-/* шапка: */
-/* .header h1{
-    padding: 2em 0 3em 0;
-    text-align: center;
-
-    font-family: Roboto, sans-serif;
-    font-size: 46px;
-    color: #fff;
-    font-weight:1;
-} */
 /* контейнер с блоками контактов: */
 .links {
   display: grid;
@@ -116,11 +106,9 @@ body {
   min-width: 45%;
   width: 45%;
 }
-
 .text h2 {
   font-size: 22px;
 }
-
 .text p {
   font-style: italic;
   padding: 30px 0;
@@ -156,6 +144,7 @@ body {
     max-width: 320px;
   }
 }
+/* правая секция с основным текстом:*/
 .main_text {
   color: white;
 }
@@ -165,7 +154,6 @@ body {
   display: flex;
   gap: 20px;
 }
-
 .soc_icon_cont svg {
   min-width: 60px;
   min-height: 60px;
@@ -182,19 +170,16 @@ body {
   font-size: 16px;
   color: #a2b3a2;
 }
-
 .freepic a:link {
   color: #a2b3a2;
   text-decoration: none;
   border-bottom: 1px solid #a2b3a2;
 }
-
 .freepic a:visited {
   color: #a2b3a2;
   text-decoration: none;
   border-bottom: 1px solid #f14a0e;
 }
-
 .freepic a:active {
   color: #a2b3a2;
   text-decoration: none;
@@ -209,19 +194,15 @@ body {
   background-color: #333333;
   color: #ffffff;
 }
-
 .footer a {
   color: #72b8f1;
 }
-
 .footer a:visited {
   color: #72b8f1;
 }
-
 .footer a:active {
   color: #72b8f1;
 }
-
 .footer a:hover {
   text-decoration: none;
   color: #a1a1a1;

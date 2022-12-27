@@ -11,16 +11,6 @@ body{
     padding: 310px 25px 0 30px;
 }
 
-/* шапка: */
-/* .header h1{
-    padding: 2em 0 3em 0;
-    text-align: center;
-
-    font-family: Roboto, sans-serif;
-    font-size: 46px;
-    color: #fff;
-    font-weight:1;
-} */
 /* контейнер с блоками контактов: */
 .links{
     display: grid;
@@ -49,6 +39,7 @@ body{
         font-family: 'Open Sans', sans-serif;
     }
 }
+
 
 
 
@@ -131,17 +122,17 @@ body{
     
     min-width: 45%;
     width: 45%;
-}
-
-.text h2{
-    font-size: 22px;
-}
-
-.text p{
-    font-style: italic;
+    h2{
+        font-size: 22px;
+    }
     
-    padding: 30px 0;
+    p{
+        font-style: italic;
+        
+        padding: 30px 0;
+    }
 }
+
 
 .price {
     font-size: 24px;
@@ -181,7 +172,7 @@ body{
 
 
 
-
+/* правая секция с основным текстом:*/
 .main_text {
     color: white;
 }
@@ -190,14 +181,15 @@ body{
 .soc_icon_cont{
     display: flex;
     gap:20px;
+
+    svg{
+        min-width: 60px;
+        min-height: 60px;
+        fill:#f14a0e;
+    }
 }
 
 
-.soc_icon_cont svg{
-    min-width: 60px;
-    min-height: 60px;
-    fill:#f14a0e;
-}
 
 
 
@@ -211,25 +203,25 @@ body{
     font-style: italic;
     font-size: 16px;
     color: #a2b3a2;
+    a:link{
+        color: #a2b3a2;
+        text-decoration: none;
+        border-bottom: 1px solid #a2b3a2;
+    }
+    
+    a:visited{
+        color: #a2b3a2;
+        text-decoration: none;
+        border-bottom: 1px solid #f14a0e;
+    }
+    
+    a:active{
+        color: #a2b3a2;
+        text-decoration: none;
+        border-bottom: 1px solid #f14a0e;
+    }
 }
 
-.freepic a:link{
-    color: #a2b3a2;
-    text-decoration: none;
-    border-bottom: 1px solid #a2b3a2;
-}
-
-.freepic a:visited{
-    color: #a2b3a2;
-    text-decoration: none;
-    border-bottom: 1px solid #f14a0e;
-}
-
-.freepic a:active{
-    color: #a2b3a2;
-    text-decoration: none;
-    border-bottom: 1px solid #f14a0e;
-}
 
 /* футер и его ссылки */
 .footer {
@@ -239,21 +231,21 @@ body{
     font-size: 14px;
     background-color: #333333;
     color: #ffffff;
+    a{
+        color: #72b8f1;
+    }
+    
+    a:visited{
+        color: #72b8f1;
+    }
+    
+    a:active{
+        color: #72b8f1;
+    }
+    
+    a:hover{
+        text-decoration: none;
+        color: #a1a1a1;
+    }
 }
 
-.footer a{
-    color: #72b8f1;
-}
-
-.footer a:visited{
-    color: #72b8f1;
-}
-
-.footer a:active{
-    color: #72b8f1;
-}
-
-.footer a:hover{
-    text-decoration: none;
-    color: #a1a1a1;
-}
