@@ -6,9 +6,9 @@ body{
     background-repeat: no-repeat;
     background-color: #000;
 
-    max-width: 1110px;
+    max-width: 1150px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 310px 25px 0 30px;
 }
 
 /* шапка: */
@@ -21,9 +21,18 @@ body{
     color: #fff;
     font-weight:1;
 } */
-
-.contacts{
+/* контейнер с блоками контактов: */
+.links{
     font-family: Raleway,sans-serif;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* блоки контактов: */
+.link_cont{
+    background-color: #fff;
+    border-radius: 18px;
 }
 
 .main{
