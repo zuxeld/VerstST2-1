@@ -27,13 +27,23 @@ body{
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
+
 
 /* блоки контактов: */
 .link_cont{
     background-color: #fff;
     border-radius: 18px;
+
+    padding: 30px;
+    text-align: center;
 }
+
+.link_cont img{
+    max-width: ;
+}
+
 
 .main{
     position: relative;
@@ -122,7 +132,7 @@ body{
 
 .text p{
     font-style: italic;
-
+    
     padding: 30px 0;
 }
 
