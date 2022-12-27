@@ -23,8 +23,6 @@ body{
 } */
 /* контейнер с блоками контактов: */
 .links{
-    font-family: Raleway,sans-serif;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -41,7 +39,16 @@ body{
 }
 
 .link_cont img{
-    max-width: ;
+    max-width: 65px;
+}
+
+.link_cont h2{
+    font-family: Raleway,sans-serif;
+    font-size: 20px;
+    padding: 15px 0 20px 0;
+}
+.link_cont p{
+    font-family: 'Open Sans', sans-serif;
 }
 
 
