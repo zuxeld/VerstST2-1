@@ -1,4 +1,6 @@
 /* у текста форм цвет: #797979 */
+// цвета:
+
 
 // шрифт заголовков:
 $h_font_fam: Raleway, sans-serif;
@@ -48,137 +50,73 @@ body {
   }
 }
 
+// нижняя секция(основной текст и формы):
 .main {
+  margin-top: 90px;
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 60px;
 }
 
-
-// ---------------------------------------------------
-// old
-
-
-/* секция с блоками текста и картинок: */
-.sec_pic_text {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-/* контейнеры с картинками и текстом: */
-
-.img_text_cont {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 45px;
-}
-.revers {
-  flex-direction: row-reverse;
-}
-
-/* (костыль сохранения соотношения картинок)контейненры контейнеров с картинками: */
-.img_cont_cont {
-  width: 100%;
-  flex-grow: 1;
-  position: relative;
-}
-
-.img_cont_cont::after {
-  content: "";
-  width: calc(100% + 6px);
-  height: calc(100% + 6px);
-
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  z-index: -1;
-
-  clip-path: circle(50%);
-  background-color: white;
-}
-
-/* контейнеры с картинками: */
-.img_cont {
-  width: 100%;
-  overflow: hidden;
-
-  /* кастыль вертикального выравнивания(часть 1/2): */
-  position: relative;
-  padding-top: 100%;
-
-  clip-path: circle(50%);
-}
-
-/* картинки: */
-.img_cont img {
-  width: 100%;
-  height: 100%;
-
-  /* кастыль вертикального выравнивания(часть 2/2): */
-  position: absolute;
-  top: 0;
-
-  object-fit: cover;
-}
-
-/* контейнер с текстом: */
-.text {
-  color: white;
-  font-family: Roboto, sans-serif;
-  font-size: 18px;
-  font-weight: 100;
-
-  min-width: 45%;
-  width: 45%;
-  h2 {
-    font-size: 22px;
+// секция с формами:
+.sub_forms {
+  color: #fff;
+  font:{
+    family: $main_font_fam;
+    size: 16px;
   }
 
-  p {
-    font-style: italic;
+  *{
+    display:block;
 
-    padding: 30px 0;
   }
+  label{
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  input, textarea{
+    margin-bottom: 30px;
+    text-indent: 10px;
+    width: 100%;
+    padding: 15px 0;
+
+    font:{
+      size:inherit;
+      family:$main_font_fam;
+      weight: 500;
+    }
+    color:inherit;
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+
+    &:focus-within{
+      border: none;
+    }
+  }
+  .sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 57px;
+
+    border: none;
+    border-radius: 28px;
+    font-weight:bold;
+    color: #fff;
+    text:{
+      transform: uppercase;
+    }
+    // word-spacing: 4px;
+    background-color: #f14a0e;
+    
+
+
+  }
+
+
 }
-
-.price {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-@media (max-width: 780px) {
-  /* меньшая общая ширина: */
-  body {
-    max-width: 530px;
-  }
-
-  /* одна грид-колонка: */
-  .sec_pic_text {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  /* картинки над текстом: */
-  .img_text_cont {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .text {
-    min-width: auto;
-    width: auto;
-  }
-}
-
-@media (max-width: 560px) {
-  /* меньшая общая ширина: */
-  body {
-    max-width: 320px;
-  }
-}
-
-// ---------------------------------------
-
 
 
 /* правая секция с основным текстом:*/
@@ -198,12 +136,8 @@ body {
   }
 }
 
-/* подпись под картинками и её ссылки: */
+/* подпись под текстом и её ссылки: */
 .freepic {
-  text-align: center;
-  padding: 2em;
-  padding-bottom: 4em;
-
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-size: 16px;
