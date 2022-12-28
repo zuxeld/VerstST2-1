@@ -67,8 +67,12 @@ body {
   border: none;
   border-bottom: 2px solid white;
 }
-.sub_forms input:focus-within, .sub_forms textarea:focus-within {
-  border: none;
+.sub_forms input:focus, .sub_forms textarea:focus {
+  outline: none;
+}
+.sub_forms textarea {
+  padding: 0;
+  min-height: 120px;
 }
 .sub_forms .sub {
   display: flex;
@@ -82,10 +86,30 @@ body {
   text-transform: uppercase;
   background-color: #f14a0e;
 }
+.sub_forms .sub:hover {
+  background-color: #fff;
+  color: #f14a0e;
+}
 
 /* правая секция с основным текстом:*/
 .main_text {
   color: white;
+}
+.main_text h1 {
+  font-size: 48px;
+  font-family: Raleway, sans-serif;
+  font-weight: normal;
+}
+.main_text p {
+  font-family: "Open Sans", sans-serif;
+}
+.main_text .text1 {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}
+.main_text .text2 {
+  font-size: 16px;
 }
 
 /* иконки соцсетей: */

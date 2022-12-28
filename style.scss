@@ -75,7 +75,7 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
   }
-  input, textarea{
+  input, textarea {
     margin-bottom: 30px;
     text-indent: 10px;
     width: 100%;
@@ -91,9 +91,13 @@ body {
     border: none;
     border-bottom: 2px solid white;
 
-    &:focus-within{
-      border: none;
+    &:focus{
+      outline: none;
     }
+  }
+  textarea{
+    padding: 0;
+    min-height: 120px;
   }
   .sub{
     display: flex;
@@ -111,8 +115,11 @@ body {
     // word-spacing: 4px;
     background-color: #f14a0e;
     
+    &:hover {
+      background-color:#fff;
+      color:#f14a0e;
 
-
+    }
   }
 
 
@@ -122,6 +129,22 @@ body {
 /* правая секция с основным текстом:*/
 .main_text {
   color: white;
+  h1{
+    font-size: 48px;
+    font-family: $h_font_fam;
+    font-weight:normal;
+  }
+  p{
+    font-family: $main_font_fam;
+  }
+  .text1{
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+  }
+  .text2{
+    font-size: 16px;
+  }
 }
 
 /* иконки соцсетей: */
