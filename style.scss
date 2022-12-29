@@ -1,7 +1,13 @@
 /* у текста форм цвет: #797979 */
-// цвета:
+// ЦВЕТА:
+$color_1:#000;
+$color_2:#fff;
+$color_3:#f14a0e;
+$color_4:#a1a1a1;
+$color_5:#333333;
+$color_6:#72b8f1;
 
-
+// ШРИФТЫ:
 // шрифт заголовков:
 $h_font_fam: Raleway, sans-serif;
 // шрифт основного текста:
@@ -12,7 +18,7 @@ body {
   background: {
     image: url(https://images02.nicepagecdn.com/c461c07a441a5d220e8feb1a/892364894fd35bc8867dd5be/wdq-min.jpg);
     repeat: no-repeat;
-    color: #000;
+    color: $color_1;
   }
 
   max-width: 1150px;
@@ -29,7 +35,7 @@ body {
 
 /* блоки контактов: */
 .link_cont {
-  background-color: #fff;
+  background-color: $color_2;
   border-radius: 18px;
 
   padding: 30px;
@@ -53,6 +59,7 @@ body {
 // нижняя секция(основной текст и формы):
 .main {
   margin-top: 90px;
+  margin-bottom: 100px;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -61,7 +68,7 @@ body {
 
 // секция с формами:
 .sub_forms {
-  color: #fff;
+  color: $color_2;
   font:{
     family: $main_font_fam;
     size: 16px;
@@ -89,7 +96,7 @@ body {
     color:inherit;
     background: none;
     border: none;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid $color_2;
 
     &:focus{
       outline: none;
@@ -104,20 +111,19 @@ body {
     justify-content: center;
     align-items: center;
     height: 57px;
+    margin: 0;
 
     border: none;
     border-radius: 28px;
     font-weight:bold;
-    color: #fff;
-    text:{
-      transform: uppercase;
-    }
+    color: $color_2;
+    text-transform: uppercase;
     // word-spacing: 4px;
-    background-color: #f14a0e;
+    background-color: $color_3;
     
     &:hover {
-      background-color:#fff;
-      color:#f14a0e;
+      background-color: $color_2;
+      color: $color_3;
 
     }
   }
@@ -128,7 +134,10 @@ body {
 
 /* правая секция с основным текстом:*/
 .main_text {
-  color: white;
+  color: $color_2;
+  * {
+    max-height: 100%;
+  }
   h1{
     font-size: 48px;
     font-family: $h_font_fam;
@@ -155,7 +164,7 @@ body {
   svg {
     min-width: 60px;
     min-height: 60px;
-    fill: #f14a0e;
+    fill: $color_3;
   }
 }
 
@@ -164,25 +173,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-size: 16px;
-  $fp_link_color: #a2b3a2;
+  $fp_link_color: $color_4;
   color: $fp_link_color;
   a {
     &:link {
       color: $fp_link_color;
       text-decoration: none;
-      border-bottom: 1px solid #a2b3a2;
+      border-bottom: 1px solid $color_4;
     }
   
     &:visited {
       color: $fp_link_color;
       text-decoration: none;
-      border-bottom: 1px solid #f14a0e;
+      border-bottom: 1px solid $color_3;
     }
   
     &:active {
       color: $fp_link_color;
       text-decoration: none;
-      border-bottom: 1px solid #f14a0e;
+      border-bottom: 1px solid $color_3;
     }
   }
 }
@@ -193,10 +202,10 @@ body {
   padding: 3em;
 
   font-size: 14px;
-  background-color: #333333;
-  color: #ffffff;
+  background-color: $color_5;
+  color: $color_2;
   a {
-    $footer_color: #72b8f1;
+    $footer_color: $color_6;
     color: $footer_color;
     &:visited {
       color: $footer_color;
@@ -208,7 +217,7 @@ body {
   
     &:hover {
       text-decoration: none;
-      color: #a1a1a1;
+      color: $color_4;
     }
   }
 

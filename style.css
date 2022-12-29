@@ -37,6 +37,7 @@ body {
 
 .main {
   margin-top: 90px;
+  margin-bottom: 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 60px;
@@ -65,7 +66,7 @@ body {
   color: inherit;
   background: none;
   border: none;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #fff;
 }
 .sub_forms input:focus, .sub_forms textarea:focus {
   outline: none;
@@ -79,6 +80,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 57px;
+  margin: 0;
   border: none;
   border-radius: 28px;
   font-weight: bold;
@@ -93,7 +95,10 @@ body {
 
 /* правая секция с основным текстом:*/
 .main_text {
-  color: white;
+  color: #fff;
+}
+.main_text * {
+  max-height: 100%;
 }
 .main_text h1 {
   font-size: 48px;
@@ -128,20 +133,20 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-size: 16px;
-  color: #a2b3a2;
+  color: #a1a1a1;
 }
 .freepic a:link {
-  color: #a2b3a2;
+  color: #a1a1a1;
   text-decoration: none;
-  border-bottom: 1px solid #a2b3a2;
+  border-bottom: 1px solid #a1a1a1;
 }
 .freepic a:visited {
-  color: #a2b3a2;
+  color: #a1a1a1;
   text-decoration: none;
   border-bottom: 1px solid #f14a0e;
 }
 .freepic a:active {
-  color: #a2b3a2;
+  color: #a1a1a1;
   text-decoration: none;
   border-bottom: 1px solid #f14a0e;
 }
@@ -152,7 +157,7 @@ body {
   padding: 3em;
   font-size: 14px;
   background-color: #333333;
-  color: #ffffff;
+  color: #fff;
 }
 .footer a {
   color: #72b8f1;
