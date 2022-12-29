@@ -4,9 +4,10 @@ body {
   background-image: url(https://images02.nicepagecdn.com/c461c07a441a5d220e8feb1a/892364894fd35bc8867dd5be/wdq-min.jpg);
   background-repeat: no-repeat;
   background-color: #000;
+  background-size: contain;
   max-width: 1150px;
   margin: 0 auto;
-  padding: 310px 25px 0 30px;
+  padding: 310px 30px 0 30px;
 }
 
 /* контейнер с блоками контактов: */
@@ -36,8 +37,7 @@ body {
 }
 
 .main {
-  margin-top: 90px;
-  margin-bottom: 100px;
+  margin: 90px 40px 100px 40px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 60px;
@@ -151,7 +151,7 @@ body {
   border-bottom: 1px solid #f14a0e;
 }
 
-/* футер и его ссылки */
+/* футер и его ссылки: */
 .footer {
   text-align: center;
   padding: 3em;
@@ -173,12 +173,44 @@ body {
   color: #a1a1a1;
 }
 
+@media (max-width: 1330px) {
+  body {
+    background-size: 1330px;
+    background-position-x: center;
+  }
+}
 @media (max-width: 1200px) {
   body {
     max-width: 980px;
   }
   .link_cont {
     padding: 30px 10px;
+  }
+}
+@media (max-width: 980px) {
+  body {
+    max-width: 750px;
+    background-size: 1150px;
+  }
+  .links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 750px) {
+  body {
+    max-width: 560px;
+    padding: 310px 10px 0 10px;
+  }
+  .main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  body {
+    max-width: 370px;
+  }
+  .links {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

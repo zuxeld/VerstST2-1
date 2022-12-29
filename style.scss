@@ -19,11 +19,12 @@ body {
     image: url(https://images02.nicepagecdn.com/c461c07a441a5d220e8feb1a/892364894fd35bc8867dd5be/wdq-min.jpg);
     repeat: no-repeat;
     color: $color_1;
+    size: contain;
   }
 
   max-width: 1150px;
   margin: 0 auto;
-  padding: 310px 25px 0 30px;
+  padding: 310px 30px 0 30px;
 }
 
 /* контейнер с блоками контактов: */
@@ -58,8 +59,7 @@ body {
 
 // нижняя секция(основной текст и формы):
 .main {
-  margin-top: 90px;
-  margin-bottom: 100px;
+  margin: 90px 40px 100px 40px;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -196,7 +196,7 @@ body {
   }
 }
 
-/* футер и его ссылки */
+/* футер и его ссылки: */
 .footer {
   text-align: center;
   padding: 3em;
@@ -224,6 +224,19 @@ body {
 }
 
 
+
+// фоновое изображение перестаёт сжиматся:
+@media (max-width: 1330px){
+  body{
+    background: {
+      size: 1330px;
+      position-x: center;
+    }
+
+  }
+}
+
+// ширина всего уменьшается, уменьшаются отступы в блоках контактов:
 @media (max-width: 1200px){
   body{
     max-width: 980px;
@@ -231,5 +244,39 @@ body {
   }
   .link_cont {
     padding: 30px 10px;
+  }
+}
+
+// ширина всего уменьшается, ширина фонового изображения уменьшается,
+//   блоки с контактами встают в две колонки:
+@media (max-width: 980px){
+  body{
+    max-width: 750px;
+    background-size: 1150px;
+  }
+  .links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// ширина всего уменьшается, отступы от всего до краёв экрана уменьшаются,
+//   блоки форм и основного текста встают в отдну колонку:
+@media (max-width: 750px){
+  body{
+    max-width: 560px;
+    padding: 310px 10px 0 10px;
+  }
+  .main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+// ширина всего уменьшается, блоки с контактами встают в одну колонку:
+@media (max-width: 560px){
+  body{
+    max-width: 370px;
+  }
+  .links {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
