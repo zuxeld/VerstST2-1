@@ -173,4 +173,13 @@ body {
   color: #a1a1a1;
 }
 
+@media (max-width: 1200px) {
+  body {
+    max-width: 980px;
+  }
+  .link_cont {
+    padding: 30px 10px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

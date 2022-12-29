@@ -222,3 +222,14 @@ body {
   }
 
 }
+
+
+@media (max-width: 1200px){
+  body{
+    max-width: 980px;
+
+  }
+  .link_cont {
+    padding: 30px 10px;
+  }
+}
