@@ -69,7 +69,7 @@ body {
 // секция с формами:
 .sub_forms {
   color: $color_2;
-  font:{
+  font: {
     family: $main_font_fam;
     size: 16px;
   }
@@ -80,7 +80,7 @@ body {
   }
   label{
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
   }
   input, textarea {
     margin-bottom: 30px;
@@ -88,7 +88,7 @@ body {
     width: 100%;
     padding: 15px 0;
 
-    font:{
+    font: {
       size:inherit;
       family:$main_font_fam;
       weight: 500;
@@ -135,8 +135,11 @@ body {
 /* правая секция с основным текстом:*/
 .main_text {
   color: $color_2;
-  * {
+  > * {
     max-height: 100%;
+    margin-bottom: 30px;
+    line-height: 150%;
+    
   }
   h1{
     font-size: 48px;
@@ -160,10 +163,11 @@ body {
 .soc_icon_cont {
   display: flex;
   gap: 20px;
+  margin-bottom: 70px;
 
   svg {
-    min-width: 60px;
-    min-height: 60px;
+    min-width: 40px;
+    min-height: 40px;
     fill: $color_3;
   }
 }
@@ -175,13 +179,14 @@ body {
   font-size: 16px;
   $fp_link_color: $color_4;
   color: $fp_link_color;
+  margin-bottom: 0;
   a {
     &:link {
       color: $fp_link_color;
       text-decoration: none;
       border-bottom: 1px solid $color_4;
     }
-  
+    
     &:visited {
       color: $fp_link_color;
       text-decoration: none;
