@@ -1,4 +1,4 @@
-# Verst3
-это вёрстка сайта по образцу - [другому сайту](https://nicepage.com/html-templates/preview/get-in-touch-block-with-icons-3158387?device=desktop)
+# Verst4
+это вёрстка сайта по образцу - [другому сайту](https://nicepage.com/html-templates/preview/simple-recipes-and-techniques-3312465?device=desktop)
 
-статус: ~готово
+статус: в работе
