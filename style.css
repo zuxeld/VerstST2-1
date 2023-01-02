@@ -1,46 +1,55 @@
 @charset "UTF-8";
-/* у текста форм цвет: #797979 */
 body {
-  background-image: url(https://images02.nicepagecdn.com/c461c07a441a5d220e8feb1a/892364894fd35bc8867dd5be/wdq-min.jpg);
+  background-image: url(https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/b01f1f1be80954858db0a36a/-min.jpg);
   background-repeat: no-repeat;
   background-color: #000;
-  background-size: contain;
-  max-width: 1150px;
-  margin: 0 auto;
-  padding: 310px 30px 0 30px;
+  background-size: cover;
+  background-position: center;
 }
 
-/* контейнер с блоками контактов: */
-.links {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-/* блоки контактов: */
-.link_cont {
-  background-color: #fff;
-  border-radius: 18px;
-  padding: 30px;
+.header {
   text-align: center;
+  margin: 110px 0 0 0;
 }
-.link_cont img {
-  max-width: 65px;
+.header h1 {
+  margin-bottom: 25px;
+  font-size: 3.5rem;
+  font-weight: normal;
+  font-family: Montserrat, sans-serif;
 }
-.link_cont h2 {
-  font-family: Raleway, sans-serif;
-  font-size: 20px;
-  padding: 15px 0 20px 0;
-}
-.link_cont p {
+
+/* подпись под текстом и её ссылки: */
+.freepic {
   font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #000;
+  margin-bottom: 0;
+}
+.freepic a:link {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+}
+.freepic a:visited {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #808080;
+}
+.freepic a:active {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #808080;
+}
+.freepic a:hover {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #808080;
 }
 
 .main {
-  margin: 90px 40px 100px 40px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
+  max-width: 1150px;
+  margin: 0 auto;
 }
 
 .sub_forms {
@@ -86,11 +95,11 @@ body {
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
-  background-color: #f14a0e;
+  background-color: #f2952d;
 }
 .sub_forms .sub:hover {
   background-color: #fff;
-  color: #f14a0e;
+  color: #f2952d;
 }
 
 /* правая секция с основным текстом:*/
@@ -104,7 +113,7 @@ body {
 }
 .main_text h1 {
   font-size: 48px;
-  font-family: Raleway, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-weight: normal;
 }
 .main_text p {
@@ -120,41 +129,6 @@ body {
 }
 
 /* иконки соцсетей: */
-.soc_icon_cont {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 70px;
-}
-.soc_icon_cont svg {
-  min-width: 40px;
-  min-height: 40px;
-  fill: #f14a0e;
-}
-
-/* подпись под текстом и её ссылки: */
-.freepic {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: italic;
-  font-size: 16px;
-  color: #a1a1a1;
-  margin-bottom: 0;
-}
-.freepic a:link {
-  color: #a1a1a1;
-  text-decoration: none;
-  border-bottom: 1px solid #a1a1a1;
-}
-.freepic a:visited {
-  color: #a1a1a1;
-  text-decoration: none;
-  border-bottom: 1px solid #f14a0e;
-}
-.freepic a:active {
-  color: #a1a1a1;
-  text-decoration: none;
-  border-bottom: 1px solid #f14a0e;
-}
-
 /* футер и его ссылки: */
 .footer {
   text-align: center;
@@ -164,17 +138,17 @@ body {
   color: #fff;
 }
 .footer a {
-  color: #72b8f1;
+  color: #fff;
 }
 .footer a:visited {
-  color: #72b8f1;
+  color: #fff;
 }
 .footer a:active {
-  color: #72b8f1;
+  color: #fff;
 }
 .footer a:hover {
   text-decoration: none;
-  color: #a1a1a1;
+  color: #eeb16d;
 }
 
 @media (max-width: 1330px) {
