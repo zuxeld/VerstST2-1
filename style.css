@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* line 23, style.scss */
 body {
   background-image: url(https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/b01f1f1be80954858db0a36a/-min.jpg);
   background-repeat: no-repeat;
@@ -7,10 +8,12 @@ body {
   background-position: center;
 }
 
+/* line 34, style.scss */
 .header {
   text-align: center;
   padding: 90px 0 60px 0;
 }
+/* line 37, style.scss */
 .header h1 {
   margin-bottom: 25px;
   font-size: 3.5rem;
@@ -19,6 +22,7 @@ body {
 }
 
 /* подпись под текстом и её ссылки: */
+/* line 48, style.scss */
 .freepic {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -26,44 +30,54 @@ body {
   color: #000;
   margin-bottom: 0;
 }
+/* line 56, style.scss */
 .freepic a:link {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #404040;
 }
+/* line 62, style.scss */
 .freepic a:visited {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #808080;
 }
+/* line 68, style.scss */
 .freepic a:active {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #808080;
 }
+/* line 73, style.scss */
 .freepic a:hover {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #808080;
 }
 
+/* line 82, style.scss */
 .main {
   max-width: 680px;
   margin: 0 auto;
 }
 
+/* line 88, style.scss */
 .sub_forms {
   padding: 0 20px 0 20px;
+  margin-bottom: 120px;
   color: #000;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
 }
+/* line 99, style.scss */
 .sub_forms * {
   display: block;
 }
+/* line 102, style.scss */
 .sub_forms label {
   margin-bottom: 4px;
 }
+/* line 105, style.scss */
 .sub_forms input {
   text-indent: 11px;
   width: 100%;
@@ -74,25 +88,28 @@ body {
   border: none;
   border-radius: 23px;
 }
+/* line 119, style.scss */
 .sub_forms input:focus {
   outline: none;
 }
+/* line 123, style.scss */
 .sub_forms .sub {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
-  margin-bottom: 80px;
   border: none;
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
   background-color: #000;
 }
+/* line 136, style.scss */
 .sub_forms .sub:hover {
   background-color: #4d4d4d;
 }
 
+/* line 142, style.scss */
 .forms_cont {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -101,6 +118,7 @@ body {
 }
 
 /* секция с текстом:*/
+/* line 153, style.scss */
 .main_text {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -109,85 +127,116 @@ body {
   text-align: center;
   color: #000;
 }
+/* line 161, style.scss */
 .main_text > * {
   line-height: 200%;
 }
+/* line 166, style.scss */
 .main_text h2 {
   margin-bottom: 20px;
   font-size: 25px;
   font-family: Montserrat, sans-serif;
   font-weight: bold;
 }
+/* line 173, style.scss */
 .main_text p {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
 }
+/* line 180, style.scss */
 .main_text .text_blok a:link {
   font-weight: bold;
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #f2952d;
 }
+/* line 187, style.scss */
 .main_text .text_blok a:visited {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #f2952d;
 }
+/* line 193, style.scss */
 .main_text .text_blok a:active {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #000;
 }
+/* line 198, style.scss */
 .main_text .text_blok a:hover {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #000;
 }
+/* line 205, style.scss */
 .main_text .marked_text {
   font-weight: bold;
 }
 
 /* футер и его ссылки: */
+/* line 211, style.scss */
 .footer {
   text-align: center;
   padding: 3em;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   background-color: #333333;
   color: #fff;
 }
-.footer a {
-  color: #fff;
+/* line 220, style.scss */
+.footer a:link {
+  color: #eeb16d;
 }
+/* line 223, style.scss */
 .footer a:visited {
-  color: #fff;
+  color: #eeb16d;
 }
+/* line 227, style.scss */
 .footer a:active {
-  color: #fff;
+  color: #eeb16d;
 }
+/* line 231, style.scss */
 .footer a:hover {
   text-decoration: none;
   color: #eeb16d;
 }
 
-@media (max-width: 1250px) {
-  body {
-    background-size: 1252px;
-    background-position-y: top;
-  }
-}
 @media (max-width: 1200px) {
-  body {
-    background-size: cover;
-    background-size: 1200px;
-  }
+  /* line 245, style.scss */
   .header {
     padding-top: 80px;
   }
 }
 @media (max-width: 980px) {
-  body {
-    background-size: 982px;
+  /* line 255, style.scss */
+  .header {
+    padding-top: 60px;
+  }
+
+  /* line 258, style.scss */
+  .sub_forms {
+    margin-bottom: 80px;
   }
 }
+@media (max-width: 750px) {
+  /* line 266, style.scss */
+  .main {
+    max-width: 530px;
+  }
 
-/*# sourceMappingURL=style.css.map */
+  /* line 269, style.scss */
+  .main_text {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  /* line 276, style.scss */
+  .main {
+    max-width: 530px;
+  }
+
+  /* line 279, style.scss */
+  .main_text {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

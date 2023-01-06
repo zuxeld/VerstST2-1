@@ -8,5 +8,11 @@
             "type": "shell",
             "command": "sass style.scss style.css --watch"
         }
+        {
+            "label": "compass",
+            "type": "shell",
+            "command": "compass watch ."
+        }
+
     ]
 }

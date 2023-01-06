@@ -1,3 +1,5 @@
+@import "compass";
+
 // РЕСУРСЫ САЙТА:
 // ЦВЕТА:
 $color_1: #000;
@@ -10,9 +12,6 @@ $color_7: #4d4d4d;
 $color_8: #404040;
 
 // ШРИФТЫ:
-// подключение файла шрифтов:
-// @use '_fonts' as *;
-
 // шрифт заголовков:
 $font_fam_h: Montserrat, sans-serif; //Raleway, sans-serif;
 // шрифт основного текста:
@@ -26,7 +25,7 @@ body {
     image: $img_main_beckgr;
     repeat: no-repeat;
     color: $color_1;
-    size: cover;//110%;
+    size: cover;
     position: center;
   }
 }
@@ -88,6 +87,7 @@ body {
 // секция с формами:
 .sub_forms {
   padding: 0 20px 0 20px;
+  margin-bottom: 120px;
 
   color: $color_1;
   font: {
@@ -125,7 +125,6 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    margin-bottom: 80px;
 
     border: none;
     font-weight: bold;
@@ -213,17 +212,20 @@ body {
   text-align: center;
   padding: 3em;
 
+  font-family: $font_fam_main;
   font-size: 14px;
   background-color: $color_6;
   color: $color_2;
   a {
-    color: $color_2;
+    &:link {
+      color: $color_4;
+    }
     &:visited {
-      color: $color_2;
+      color: $color_4;
     }
 
     &:active {
-      color: $color_2;
+      color: $color_4;
     }
 
     &:hover {
@@ -234,56 +236,47 @@ body {
 }
 
 
-// фоновое изображение перестаёт сжиматся:
-@media (max-width: 1250px) {
-  body {
-    background: {
-      size: 1252px;
-      // position-x: center;
-      position-y: top;
-    }
-  }
-}
-
 // фоновое изображение меняет размер, уменьшаются отступы в шапке:
 @media (max-width: 1200px) {
-  body {
-    background-size: cover;
-    background-size: 1200px;
-  }
+  // body {
+  //   background-size: cover;
+  //   background-size: 1200px;
+  // }
   .header {
     padding-top: 80px;
   }
 }
 
-// ширина фонового изображения уменьшается:
+// уменьшаестся отступ в шапке, :
 @media (max-width: 980px) {
-  body {
-    background-size: 982px;
-  }
-  // .links {
-  //   grid-template-columns: repeat(2, 1fr);
+  // body {
+  //   background-size: 982px;
   // }
+  .header {
+    padding-top: 60px;
+  }
+  .sub_forms {
+    margin-bottom: 80px;
+  }
 }
 
-// ширина всего уменьшается, отступы от всего до краёв экрана уменьшаются,
-//   блоки форм и основного текста встают в отдну колонку:
+// ширина main уменьшается, отступы от main до краёв экрана уменьшаются,
+//   блоки текста встают в две колонки:
 @media (max-width: 750px) {
-  body {
-    // max-width: 560px;
-    // padding: 310px 10px 0 10px;
+  .main {
+    max-width: 530px;
   }
-  // .main {
-  //   grid-template-columns: repeat(1, 1fr);
-  // }
+  .main_text {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-// ширина всего уменьшается, блоки с контактами встают в одну колонку:
+// ширина main уменьшается, блоки с текстом и формы встают в одну колонку:
 @media (max-width: 560px) {
-  body {
-    // max-width: 370px;
+  .main {
+    max-width: 530px;
   }
-  // .links {
-  //   grid-template-columns: repeat(1, 1fr);
-  // }
+  .main_text {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
