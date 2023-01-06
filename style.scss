@@ -236,22 +236,16 @@ body {
 }
 
 
-// фоновое изображение меняет размер, уменьшаются отступы в шапке:
+
+// уменьшаются отступы в шапке:
 @media (max-width: 1200px) {
-  // body {
-  //   background-size: cover;
-  //   background-size: 1200px;
-  // }
   .header {
     padding-top: 80px;
   }
 }
 
-// уменьшаестся отступ в шапке, :
+// уменьшаестся отступ в шапке:
 @media (max-width: 980px) {
-  // body {
-  //   background-size: 982px;
-  // }
   .header {
     padding-top: 60px;
   }
@@ -261,8 +255,13 @@ body {
 }
 
 // ширина main уменьшается, отступы от main до краёв экрана уменьшаются,
-//   блоки текста встают в две колонки:
+//   размер шрифта гл. заг. уменьшается, блоки текста встают в две колонки:
 @media (max-width: 750px) {
+  .header {
+    h1 {
+      font-size: 3rem;
+    }
+  }
   .main {
     max-width: 530px;
   }
@@ -271,12 +270,28 @@ body {
   }
 }
 
-// ширина main уменьшается, блоки с текстом и формы встают в одну колонку:
+// ширина main уменьшается, отступы от main до краёв экрана уменьшаются,
+//   размер шрифта гл. заг. уменьшается, блоки с текстом и формы встают в одну колонку:
 @media (max-width: 560px) {
+  .header {
+    h1 {
+      font-size: 2.125rem;
+    }
+  }
   .main {
-    max-width: 530px;
+    max-width: 330px;
   }
   .main_text {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .forms_cont {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .sub_forms {
+    padding: {
+      left: 0;
+      right: 0;
+    }
   }
 }
