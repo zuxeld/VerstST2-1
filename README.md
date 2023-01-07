@@ -1,4 +1,4 @@
-# Verst4
-это вёрстка сайта по образцу - [другому сайту](https://nicepage.com/html-templates/preview/simple-recipes-and-techniques-3312465?device=desktop)
+# VerstST2-1
+это вёрстка сайта по образцу - [другому сайту]()
 
-статус: готово
+статус: в работе
