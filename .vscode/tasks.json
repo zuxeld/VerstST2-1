@@ -6,13 +6,9 @@
         {
             "label": "sass",
             "type": "shell",
-            "command": "sass style.scss style.css --watch"
+            "command": "sass --watch style.scss:style.css"//"sass style.scss style.css --watch"
         }
-        {
-            "label": "sass2",
-            "type": "shell",
-            "command": "sass --watch style.scss:style.css"
-        }
+        
         {
             "label": "compass",
             "type": "shell",
