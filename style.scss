@@ -2,12 +2,12 @@
 // ЦВЕТА:
 $color_1: #000;
 $color_2: #fff;
-$color_3: #f2952d;
-$color_4: #eeb16d;
+$color_3: #157efb;
+$color_4: #8dc1fd;
 $color_5: #808080;
 $color_6: #333333;
 $color_7: #4d4d4d;
-$color_8: #404040;
+$color_8: #123a5a;
 
 // ШРИФТЫ:
 // шрифт заголовков:
@@ -16,16 +16,10 @@ $font_fam_h: Montserrat, sans-serif; //Raleway, sans-serif;
 $font_fam_main: "Open Sans", sans-serif;
 
 // ИЗОБРАЖЕНИЯ:
-$img_main_beckgr: url(https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/b01f1f1be80954858db0a36a/-min.jpg);
+
 
 body {
-  background: {
-    image: $img_main_beckgr;
-    repeat: no-repeat;
-    color: $color_1;
-    size: cover;
-    position: center;
-  }
+  background-color: $color_2;
 }
 
 // заголовок:
@@ -143,9 +137,7 @@ body {
   gap: 30px;
   margin-bottom: 33px;
 }
-.form_cont {
-  
-}
+
 
 /* секция с текстом:*/
 .main_text {
