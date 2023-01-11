@@ -4,68 +4,124 @@ $color_1: #000;
 $color_2: #fff;
 $color_3: #157efb;
 $color_4: #8dc1fd;
-$color_5: #808080;
+$color_5: #0a58ca;
 $color_6: #333333;
 $color_7: #4d4d4d;
 $color_8: #123a5a;
 
 // ШРИФТЫ:
-// шрифт заголовков:
-$font_fam_h: Montserrat, sans-serif; //Raleway, sans-serif;
-// шрифт основного текста:
-$font_fam_main: "Open Sans", sans-serif;
+$font_fam_1: "Inter", sans-serif;
 
 // ИЗОБРАЖЕНИЯ:
 
 
 body {
   background-color: $color_2;
+  font-family: $font_fam_1;
 }
 
 // заголовок:
-.header {
-  text-align: center;
-  padding: 90px 0 60px 0;
-  h1 {
-    margin-bottom: 25px;
+// .header {
+//   text-align: center;
+//   padding: 90px 0 60px 0;
+//   h1 {
+//     margin-bottom: 25px;
 
-    font: {
-      size: 3.5rem;
-      weight: normal;
-      family: $font_fam_h;
+//     font: {
+//       size: 3.5rem;
+//       weight: normal;
+//       family: $font_fam_1;
+//     }
+//   }
+// }
+// баннер-шапка "скидка 20% новым аккаунтам"
+.NewAccPromotionHeader {
+  // задействованные блоком внешние ресурсы:
+  // цвета:
+  // $color_2
+  // $color_3
+  // $color_4
+
+  // содержимое блока:
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  padding: 10px;
+
+  background-color: $color_3;
+  font-size: 10px;
+  color:$color_2;
+
+  &__ButtonSpecial {
+    padding: 5px 9px 4px 8px;
+    margin-right: 12px;
+    
+
+    background-color: $color_2;
+    color: $color_1;
+    border-radius: 4px;
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
+  &__SmileIcon {
+    margin-right: 4px;
+    max-width: 15px;
+  }
+  &__Text {
+    margin-right: 12px;
+    // letter-spacing: 1px;
+    // word-spacing: 120%;
+    color: $color_4;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  &__TextMark {
+    color: $color_2;
+    font-weight: normal;
+  }
+  &__RegistrationLink {
+    transition:  0.5s;
+    text-decoration: underline $color_2;
+    // transition: text-decoration-color 1s;
+
+    // &:link {
+    //   color: $color_2;
+    //   text-decoration-color: $color_2;
+    // }
+    
+    // &:visited {
+    //   color: $color_2;
+    //   text-decoration-color: $color_2;
+    // }
+    
+    // &:active {
+    //   color: $color_2;
+    //   text-decoration-color: $color_2;
+    // }
+    &:hover {
+      color: $color_5;
+      text-decoration-color: $color_5;
     }
   }
+
 }
 /* подпись под текстом и её ссылки: */
 .freepic {
-  font-family: $font_fam_main;
+  font-family: $font_fam_1;
   font-size: 16px;
   letter-spacing: 2px;
   color: $color_1;
+  
 
   margin-bottom: 0;
   a {
+    border-bottom: 1px solid $color_5;
     &:link {
-      color: $color_1;
-      text-decoration: none;
       border-bottom: 1px solid $color_8;
-    }
-
-    &:visited {
-      color: $color_1;
-      text-decoration: none;
-      border-bottom: 1px solid $color_5;
-    }
-
-    &:active {
-      color: $color_1;
-      text-decoration: none;
-      border-bottom: 1px solid $color_5;
-    }
-    &:hover {
-      color: $color_1;
-      text-decoration: none;
-      border-bottom: 1px solid $color_5;
     }
   }
 }
@@ -83,10 +139,9 @@ body {
 
   color: $color_1;
   font: {
-    family: $font_fam_main;
+    family: $font_fam_1;
     size: 16px;
   }
-
 
   * {
     display: block;
@@ -101,7 +156,7 @@ body {
 
     font: {
       size: inherit;
-      family: $font_fam_main;
+      family: $font_fam_1;
       // weight: 500;
     }
     color: inherit;
@@ -138,7 +193,6 @@ body {
   margin-bottom: 33px;
 }
 
-
 /* секция с текстом:*/
 .main_text {
   display: grid;
@@ -157,11 +211,11 @@ body {
     margin-bottom: 20px;
 
     font-size: 25px;
-    font-family: $font_fam_h;
+    font-family: $font_fam_1;
     font-weight: bold;
   }
   p {
-    font-family: $font_fam_main;
+    font-family: $font_fam_1;
     // letter-spacing: 150%;
     font-size: 18px;
   }
@@ -173,13 +227,13 @@ body {
         text-decoration: none;
         border-bottom: 1px solid $color_3;
       }
-  
+
       &:visited {
         color: $color_1;
         text-decoration: none;
         border-bottom: 1px solid $color_3;
       }
-  
+
       &:active {
         color: $color_1;
         text-decoration: none;
@@ -202,7 +256,7 @@ body {
   text-align: center;
   padding: 3em;
 
-  font-family: $font_fam_main;
+  font-family: $font_fam_1;
   font-size: 14px;
   background-color: $color_6;
   color: $color_2;
@@ -228,21 +282,21 @@ body {
 
 
 // уменьшаются отступы в шапке:
-@media (max-width: 1200px) {
-  .header {
-    padding-top: 80px;
-  }
-}
+// @media (max-width: 1200px) {
+//   .header {
+//     padding-top: 80px;
+//   }
+// }
 
-// уменьшаестся отступ в шапке:
-@media (max-width: 980px) {
-  .header {
-    padding-top: 60px;
-  }
-  .sub_forms {
-    margin-bottom: 80px;
-  }
-}
+// // уменьшаестся отступ в шапке:
+// @media (max-width: 980px) {
+//   .header {
+//     padding-top: 60px;
+//   }
+//   .sub_forms {
+//     margin-bottom: 80px;
+//   }
+// }
 
 // ширина main уменьшается, отступы от main до краёв экрана уменьшаются,
 //   размер шрифта гл. заг. уменьшается, блоки текста встают в две колонки:
@@ -277,7 +331,7 @@ body {
   .forms_cont {
     grid-template-columns: repeat(1, 1fr);
   }
-  
+
   .sub_forms {
     padding: {
       left: 0;
