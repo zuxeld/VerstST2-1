@@ -11,9 +11,12 @@
   
   <!-- сброс стилей: -->
   <link rel="stylesheet" href="my_reset.css">
-  <!--шрифт заголовков контактов:-->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Inter:400,400i,700"> 
+  <!--шрифт текста:-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,400i,700">
+  <!-- шрифт иконок(font awersome): -->
+  <link rel="stylesheet" href="/fonts/all.min.css">
+  <link rel="stylesheet" href="/fonts/bootstrap-icons.css">
+
   <!--главные стили:-->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -34,45 +37,80 @@
         Register Now
       </a>
     </div>
+  </header>
+    
     <!-- плавающий блок с лого, навигацией и логингом:-->
     <menu class="MainMenu">
+      <img class="MainMenu__Logo" src="https://iteck-html.themescamp.com/assets/img/logo_home5.png" alt="big_logo">
       <div class="MainMenu__MenuItems">
         <div class="MainMenu__MenuItem MainMenu__MenuItem--HoldMenuConteiner">
-          Homes
+          <a href="#">Homes </a>
           <div class="MainMenu__HoldedMenuItems">
-            <div class="MainMenu__HoldedMenuItem">It Solution Creative</div>
-            <div class="MainMenu__HoldedMenuItem">App Landing</div>
-            <div class="MainMenu__HoldedMenuItem">Saas Technology</div>
-            <div class="MainMenu__HoldedMenuItem">Marketing Startup</div>
-            <div class="MainMenu__HoldedMenuItem">It Solution</div>
-            <div class="MainMenu__HoldedMenuItem">Software Company</div>
-            <div class="MainMenu__HoldedMenuItem">Digital Agency</div>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-it-solutions2.html">It Solution Creative</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-app-landing.html">App Landing</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-saas-technology.html">Saas Technology</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-marketing-startup.html">Marketing Startup</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-it-solutions.html">It Solution</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-software-company.html">Software Company</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-digital-agency.html">Digital Agency</a>
           </div>
         </div>
         <div class="MainMenu__MenuItem MainMenu__MenuItem--HoldMenuConteiner">
-          Pages
+          <a href="#">Pages </a>
           <div class="MainMenu__HoldedMenuItems">
-            <div class="MainMenu__HoldedMenuItem">about</div>
-            <div class="MainMenu__HoldedMenuItem">product</div>
-            <div class="MainMenu__HoldedMenuItem">services</div>
-            <div class="MainMenu__HoldedMenuItem">shop</div>
-            <div class="MainMenu__HoldedMenuItem">single project</div>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-about-5.html">about</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-product-5.html">product</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-services-5.html">services</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-shop-5.html">shop</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-single-project-5.html">single project</a>
           </div>
         </div>
-        <div class="MainMenu__MenuItem">Portfolio</div>
-        <div class="MainMenu__MenuItem MainMenu__MenuItem--NumberOfStates">Blog</div>
-        <div class="MainMenu__MenuItem">Contact Us</div>
+        <div class="MainMenu__MenuItem">
+          <a href="https://iteck-html.themescamp.com/page-portfolio-5.html">Portfolio</a>
+        </div>
+        <div class="MainMenu__MenuItem MainMenu__MenuItem--NumberOfStates">
+          <a href="https://iteck-html.themescamp.com/page-blog-5.html">Blog</a>
+        </div>
+        <div class="MainMenu__MenuItem">
+          <a href="https://iteck-html.themescamp.com/page-contact-5.html">Contact Us</a>
+        </div>
       </div>
       <div class="MainMenu__LoggingControl">
-        <div class="MainMenu__SignIn">Sign In</div>
-        <div class="MainMenu__StartFreeTrialButton">Start Free Trial</div>
+        <div class="MainMenu__SignIn">
+          <a href="">Sign In</a> 
+        </div>
+        <a class="MainMenu__StartFreeTrialButton" href="">Start Free Trial </a>
       </div>
     </menu>
-  </header>
+    
+    <nav class="Navigation">
+      <a href="#" class="Navigation__Points">Home</a>
+      <div class="Navigation__Braker">/</div>
+      <a href="#" class="Navigation__Points">Iteck&#x2019;s Store</a>
+      <div class="Navigation__Braker">/</div>
+      <a href="#" class="Navigation__Points">Samsung New VR Headset Oculus 2.0</a>
+    </nav>
 
   <main class="main">
+    <div class="SliderAndMainText">
+    <section class="ProductFotoGalary">
+      <div class="ProductFotoGalary__FotoChoiser">
+        <img src="https://iteck-html.themescamp.com/assets/img/shop/products/pr1.png" alt="foto1" class="ProductFotoGalary__FotoChoiserItem">
+        <img src="https://iteck-html.themescamp.com/assets/img/shop/products/pr2.png" alt="foto2" class="ProductFotoGalary__FotoChoiserItem">
+        <img src="https://iteck-html.themescamp.com/assets/img/shop/products/pr4.png" alt="foto3" class="ProductFotoGalary__FotoChoiserItem">
+        <img src="https://iteck-html.themescamp.com/assets/img/shop/products/pr5.png" alt="foto4" class="ProductFotoGalary__FotoChoiserItem">
+      </div>
+      <div class="ProductFotoGalary__GalaryScreen">
+        <img src="https://iteck-html.themescamp.com/assets/img/shop/products/pr1.png" alt="foto1" class="ProductFotoGalary__GalaryScreenItem">
+        <img src="https://iteck-html.themescamp.com/assets/img/shop/products/pr2.png" alt="foto2" class="ProductFotoGalary__GalaryScreenItem">
+        <img src="https://iteck-html.themescamp.com/assets/img/shop/products/pr4.png" alt="foto3" class="ProductFotoGalary__GalaryScreenItem">
+        <img src="https://iteck-html.themescamp.com/assets/img/shop/products/pr5.png" alt="foto4" class="ProductFotoGalary__GalaryScreenItem">
+      </div>
+    </section>
+    </div>
+
     <!-- секция с формами: -->
-    <section class="sub_forms">
+    <!-- <section class="sub_forms">
       <form action="" id="form1" method="post">
         <div class="forms_cont">
           <div class="form_cont">
@@ -86,11 +124,10 @@
         </div>
         <input class="sub" type="submit" form="form1" value="S u b m i t">
       </form>
-    </section>
+    </section> -->
 
     <!--правая секция с основным текстом:-->
-    <section class="main_text">
-      <!-- <h1>Get in touch</h1> -->
+    <!-- <section class="main_text">
       <div class="text_blok">
         <h2>FIND US</h2>
         <p>121 Rock Sreet, 21 Avenue, New York, NY 92103-9000</p>
@@ -110,7 +147,7 @@
         </p>
       </div>
 
-    </section>
+    </section> -->
   </main>
 
   <!--подвал:-->
@@ -118,7 +155,7 @@
     <a href="https://nicepage.com/website-design">Template</a> created with
     <a href="https://nicepage.com/html-website-builder">HTML Creator</a>.
   </footer>
-
+  <script src="scripts.js"></script>
 </body>
 
 </html>

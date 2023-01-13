@@ -5,9 +5,10 @@ $color_2: #fff;
 $color_3: #157efb;
 $color_4: #8dc1fd;
 $color_5: #0a58ca;
-$color_6: #333333;
-$color_7: #4d4d4d;
-$color_8: #123a5a;
+$color_6: #e9ecef;
+$color_7: #5842bc;
+$color_8: #4a00e1;
+$color_9: #aaa;
 
 // ШРИФТЫ:
 $font_fam_1: "Inter", sans-serif;
@@ -15,25 +16,12 @@ $font_fam_1: "Inter", sans-serif;
 // ИЗОБРАЖЕНИЯ:
 
 
+// САМИ СТИЛИ:
 body {
   background-color: $color_2;
   font-family: $font_fam_1;
 }
 
-// заголовок:
-// .header {
-//   text-align: center;
-//   padding: 90px 0 60px 0;
-//   h1 {
-//     margin-bottom: 25px;
-
-//     font: {
-//       size: 3.5rem;
-//       weight: normal;
-//       family: $font_fam_1;
-//     }
-//   }
-// }
 // баннер-шапка "скидка 20% новым аккаунтам"
 .NewAccPromotionHeader {
   // задействованные блоком внешние ресурсы:
@@ -86,22 +74,7 @@ body {
   &__RegistrationLink {
     transition:  0.5s;
     text-decoration: underline $color_2;
-    // transition: text-decoration-color 1s;
-
-    // &:link {
-    //   color: $color_2;
-    //   text-decoration-color: $color_2;
-    // }
     
-    // &:visited {
-    //   color: $color_2;
-    //   text-decoration-color: $color_2;
-    // }
-    
-    // &:active {
-    //   color: $color_2;
-    //   text-decoration-color: $color_2;
-    // }
     &:hover {
       color: $color_5;
       text-decoration-color: $color_5;
@@ -109,147 +82,377 @@ body {
   }
 
 }
-/* подпись под текстом и её ссылки: */
-.freepic {
-  font-family: $font_fam_1;
-  font-size: 16px;
-  letter-spacing: 2px;
-  color: $color_1;
-  
 
-  margin-bottom: 0;
-  a {
-    border-bottom: 1px solid $color_5;
-    &:link {
-      border-bottom: 1px solid $color_8;
+// плавающий блок с лого, навигацией и логингом:
+.MainMenu {
+  // position: sticky;
+  // top: -50px;
+  padding: 24px 43px;
+  
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  font-size: 12px;
+  font-weight: 700;
+  background-color: $color_2;
+
+  
+  // блок с меню:
+  &__MenuItems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  // элементы меню:
+  &__MenuItem {
+    padding: 10px;
+
+    transition:  0.5s ease-in-out;
+    &>a:hover {
+      color: $color_3;
     }
+    // модификаторы элементов меню:
+    // - для элементов меню с выпадающим списком
+    &--HoldMenuConteiner {
+      position: relative;
+      &>a::after {
+        content: "\f078";
+        font-weight: 900;
+        font-family: "Font Awesome 5 pro";
+        font-size: 80%;
+
+        position: relative;
+        // top: 3px;
+        display: inline-block;
+      }
+      
+    }
+    // - для указания числа статей (в блоге)
+    &--NumberOfStates {
+      &::after {
+        content: '3';
+        display: inline-block;
+        min-width: 32px;
+        min-height: 20px;
+
+        background-color: $color_3;
+        border-radius: 10px;
+        text-align: center;
+        padding-top: 3px;
+        color: $color_2;
+        font-size: 10px;
+
+        user-select: none;
+      }
+    }
+  }
+  // контейнер элементов выпадающего меню:
+  &__HoldedMenuItems {
+    position: absolute;
+    top:40px;
+    left: -13px;
+    padding: 10px 0;
+    min-width: 170px;
+
+    background-color: $color_2;
+    box-shadow: 0 0 10px rgba(0,0,0,0.07);
+    border-radius: 10px;
+    visibility: hidden;
+  }
+  // элемент выпадающего меню:
+  &__HoldedMenuItem {
+    display: block;
+    padding: 10px 20px;
+
+    font-weight: normal;
+
+    transition:  0.5s;
+    &:hover {
+      background-color: $color_6;
+    }
+    &:active {
+      background-color: $color_3;
+    }
+
+  }
+
+  // контейнер с кнопками входа/регистрации:
+  &__LoggingControl {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    gap: 25px;
+  }
+  // кнопка входа в аккаунт:
+  &__SignIn {
+    position: relative;
+
+    transition:  0.5s;
+    &:hover {
+      color: $color_3;
+    }
+
+    &::before {
+      content: "\f4e1";
+      display: inline-block;
+      position: absolute;
+      top:-4px;
+      left:-30px;
+      font-family: bootstrap-icons;
+      font-style: normal;
+      font-size: 20px;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+    }
+  }
+  
+  // кнопка регистрации("StartFreeTrial"):
+  &__StartFreeTrialButton {
+    position: relative;
+    top:-4px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    min-height: 40px;
+
+    border-radius: 20px;
+    color: $color_2;
+    background-color: $color_3;
+    box-shadow: 0 4px 0px $color_7;
+
+    transition: background-color 0.4s ease-in-out;
+    &:hover {
+      background-color: $color_8;
+    }
+    &::after {
+      content: "\f138";
+      display: block;
+      padding-left: 6px;
+      font-family: bootstrap-icons;
+      font-style: normal;
+      font-weight: normal;
+    }
+  }
+
+}
+
+// блок навигации под шапкой:
+.Navigation {
+  margin-top: 50px;
+  text-align: center;
+  
+  color: $color_9;
+  font-size: 14px;
+  letter-spacing: 0.01rem;
+  &__Points {
+    color: $color_1;
+    &:not(:last-child) {
+      transition: color 0.5s;
+      color: $color_9;
+      &:hover {
+        color: $color_3;
+      }
+    }
+  }
+  &__Braker {
+    display: inline-block;
+    padding: 0 12px;
   }
 }
 
-// нижняя секция(основной текст и формы):
+// секция со всем контентом:
 .main {
-  max-width: 680px;
+  max-width: 1150px;
   margin: 0 auto;
+  padding: 0 15px;
+}
+
+// контейнер слайдера и описания товара:
+.SliderAndMainText {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 80px;
+}
+
+// блок галереи:
+.ProductFotoGalary {
+  display: flex;
+  gap:20px;
+
+  // панель выбора фото:
+  &__FotoChoiser {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+  }
+  &__FotoChoiserItem {
+    max-width: 80px;
+    width: 80px;
+    max-height: 80px;
+    height: 80px;
+    object-fit:contain;
+    padding: 10px;
+    
+    border: 1px solid $color_9;
+    border-radius: 10px;
+  }
+  // сам экран галереи:
+  &__GalaryScreen {
+    position: relative;
+    max-width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+    // !!! плохо поддерживается !!!!
+    &::-webkit-scrollbar { /* Chrome, Safari и Opera */
+      width: 0;
+    }
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  &__GalaryScreenItem {
+    // width: 100%;
+    object-fit:contain;
+    max-width: 100%;
+    // max-height: 500px;
+    max-height: calc(100% + 30px);
+    padding: 50px;
+    scroll-snap-align: none center;
+    scroll-snap-stop: always;
+    pointer-events: none;
+    user-select: none;
+
+    border: 1px solid $color_9;
+    border-radius: 10px;
+  }
 }
 
 // секция с формами:
-.sub_forms {
-  padding: 0 20px 0 20px;
-  margin-bottom: 120px;
+// .sub_forms {
+//   padding: 0 20px 0 20px;
+//   margin-bottom: 120px;
 
-  color: $color_1;
-  font: {
-    family: $font_fam_1;
-    size: 16px;
-  }
+//   color: $color_1;
+//   font: {
+//     family: $font_fam_1;
+//     size: 16px;
+//   }
 
-  * {
-    display: block;
-  }
-  label {
-    margin-bottom: 4px;
-  }
-  input {
-    text-indent: 11px;
-    width: 100%;
-    height: 46px;
+//   * {
+//     display: block;
+//   }
+//   label {
+//     margin-bottom: 4px;
+//   }
+//   input {
+//     text-indent: 11px;
+//     width: 100%;
+//     height: 46px;
 
-    font: {
-      size: inherit;
-      family: $font_fam_1;
-      // weight: 500;
-    }
-    color: inherit;
-    border: none;
-    border-radius: 23px;
+//     font: {
+//       size: inherit;
+//       family: $font_fam_1;
+//       // weight: 500;
+//     }
+//     color: inherit;
+//     border: none;
+//     border-radius: 23px;
 
-    &:focus {
-      outline: none;
-    }
-  }
-  .sub {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+//     &:focus {
+//       outline: none;
+//     }
+//   }
+//   .sub {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin: 0;
 
-    border: none;
-    font-weight: bold;
-    color: $color_2;
-    text-transform: uppercase;
-    // word-spacing: 4px;
-    background-color: $color_1;
+//     border: none;
+//     font-weight: bold;
+//     color: $color_2;
+//     text-transform: uppercase;
+//     // word-spacing: 4px;
+//     background-color: $color_1;
 
-    &:hover {
-      background-color: $color_7;
-    }
-  }
-}
+//     &:hover {
+//       background-color: $color_7;
+//     }
+//   }
+// }
 
-.forms_cont {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-bottom: 33px;
-}
+// .forms_cont {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   gap: 30px;
+//   margin-bottom: 33px;
+// }
 
 /* секция с текстом:*/
-.main_text {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 33px;
-  margin-bottom: 80px;
+// .main_text {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   gap: 33px;
+//   margin-bottom: 80px;
 
-  text-align: center;
-  color: $color_1;
-  > * {
-    // max-height: 100%;
-    // margin-bottom: 30px;
-    line-height: 200%;
-  }
-  h2 {
-    margin-bottom: 20px;
+//   text-align: center;
+//   color: $color_1;
+//   > * {
+//     // max-height: 100%;
+//     // margin-bottom: 30px;
+//     line-height: 200%;
+//   }
+//   h2 {
+//     margin-bottom: 20px;
 
-    font-size: 25px;
-    font-family: $font_fam_1;
-    font-weight: bold;
-  }
-  p {
-    font-family: $font_fam_1;
-    // letter-spacing: 150%;
-    font-size: 18px;
-  }
-  .text_blok {
-    a {
-      &:link {
-        font-weight: bold;
-        color: $color_1;
-        text-decoration: none;
-        border-bottom: 1px solid $color_3;
-      }
+//     font-size: 25px;
+//     font-family: $font_fam_1;
+//     font-weight: bold;
+//   }
+//   p {
+//     font-family: $font_fam_1;
+//     // letter-spacing: 150%;
+//     font-size: 18px;
+//   }
+//   .text_blok {
+//     a {
+//       &:link {
+//         font-weight: bold;
+//         color: $color_1;
+//         text-decoration: none;
+//         border-bottom: 1px solid $color_3;
+//       }
 
-      &:visited {
-        color: $color_1;
-        text-decoration: none;
-        border-bottom: 1px solid $color_3;
-      }
+//       &:visited {
+//         color: $color_1;
+//         text-decoration: none;
+//         border-bottom: 1px solid $color_3;
+//       }
 
-      &:active {
-        color: $color_1;
-        text-decoration: none;
-        border-bottom: 1px solid $color_1;
-      }
-      &:hover {
-        color: $color_1;
-        text-decoration: none;
-        border-bottom: 1px solid $color_1;
-      }
-    }
-  }
-  .marked_text {
-    font-weight: bold;
-  }
-}
+//       &:active {
+//         color: $color_1;
+//         text-decoration: none;
+//         border-bottom: 1px solid $color_1;
+//       }
+//       &:hover {
+//         color: $color_1;
+//         text-decoration: none;
+//         border-bottom: 1px solid $color_1;
+//       }
+//     }
+//   }
+//   .marked_text {
+//     font-weight: bold;
+//   }
+// }
 
 /* футер и его ссылки: */
 .footer {
