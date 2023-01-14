@@ -9,6 +9,11 @@ $color_6: #e9ecef;
 $color_7: #5842bc;
 $color_8: #4a00e1;
 $color_9: #aaa;
+$color_10: #fc0;
+$color_11: #eee;
+$color_12: #24c;
+$color_13: #ac2;
+$color_14: #c2dbfe;
 
 // ШРИФТЫ:
 $font_fam_1: "Inter", sans-serif;
@@ -128,6 +133,9 @@ body {
         // top: 3px;
         display: inline-block;
       }
+      &:hover .MainMenu__HoldedMenuItems{
+        visibility: visible;
+      }
       
     }
     // - для указания числа статей (в блоге)
@@ -161,7 +169,7 @@ body {
     background-color: $color_2;
     box-shadow: 0 0 10px rgba(0,0,0,0.07);
     border-radius: 10px;
-    // visibility: hidden;
+    visibility: hidden;
   }
   // элемент выпадающего меню:
   &__HoldedMenuItem {
@@ -276,7 +284,7 @@ body {
 .SliderAndMainText {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 50px;
   margin-top: 80px;
 }
 
@@ -300,8 +308,8 @@ body {
     object-fit:contain;
     padding: 10px;
     
-    border: 1px solid $color_9;
-    border-radius: 10px;
+    border: 1px solid $color_6;
+    border-radius: 8px;
   }
   // сам экран галереи:
   &__GalaryScreen {
@@ -331,12 +339,253 @@ body {
     pointer-events: none;
     user-select: none;
 
-    border: 1px solid $color_9;
-    border-radius: 10px;
+    border: 1px solid $color_6;
+    border-radius: 8px;
+  }
+}
+
+// блок описания товара с формой добавления заказа в карзину:
+.ProductInfoAndBuy {
+  &__LongInfo {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 21px;
+
+    border-bottom: 1px solid $color_6;
+    padding-bottom: 20px;
+    & ul {
+      margin-top: 15px;
+      list-style-type: none;
+      & li:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+
+  }
+  &__BuingForm {
+    margin-top: 25px;
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid $color_6;
+  }
+  &__SelectColor {
+    display: flex;
+    gap: 25px;
+
+    font-size: 14px;
+    font-weight: 700;
+    & input {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 51%;
+    }
+    & input:checked::before {
+      outline:1px solid $color_3;
+      outline-offset: 3px;
+    }
+
+    & input::before {
+      content: '';
+      position: relative;
+      top:-1px;
+      left: -1px;
+      z-index: 1;
+
+      display: block;
+      width: 22px;
+      height: 22px;
+      border-radius: 51%;
+      pointer-events: none;
+    }
+    & .gray::before {
+      background-color: $color_11;
+    }
+    & .black::before {
+      background-color: $color_1;
+    }
+    & .blue::before {
+      background-color: $color_12;
+    }
+    & .grin::before {
+      background-color: $color_13;
+    }
+
+  }
+  &__QTYbuttonAndLikeConteiner {
+    // width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+  }
+  &__QTY {
+    flex-grow: 1;
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    font-size: 14px;
+    font-weight: 700;
+  }
+  &__QTYchoiser {
+    min-height: 40px;
+    width: 100%;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid $color_6;
+    border-radius: 20px;
+  }
+  &__QTYchoiserNumber {
+    max-width: 30px;
+    min-width: 30px;
+    pointer-events: none;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  &__QTYchoiserPlusMinus {
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  &__Like {
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid $color_6;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 900;
+    color: $color_9;
+    cursor: pointer;
+  }
+  &__TechInfo {
+    margin-top: 20px;
+
+    line-height:24px;
+    font-size: 14px;
+    color: $color_9;
+  }
+  &__TechInfoStart {
+    color: $color_1;
+    font-weight: 700;
+  }
+  &__TechInfoTag {
+    transition: color 0.5s;
+    &:hover {
+      color: $color_3;
+    }
+    
+    &--Choised {
+      color: $color_3;
+      text-decoration: underline;
+    }
+  }
+}
+
+// блок краткой информации о товаре:
+.ProductShotInfo {
+  &__Company {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  &__Name {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  &__Stars {
+    display: inline-block;
+    font-weight: 900;
+    font-size: 10px;
+    color: $color_6;
+    &--Active {
+      color: $color_10;
+    }
+  }
+  &__Rewes {
+    display: inline-block;
+    font-size: 10px;
+    color: $color_9;
+  }
+  &__Price {
+    margin-top: 40px;
+    
+    font-size: 25px;
+    font-weight: 700;
+  }
+}
+
+// блок кнопки добавления товара в карзину:
+.AddToCardButton {
+  flex-grow: 1;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $color_3;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  color: $color_2;
+  transition: background-color 0.5s;
+  cursor: pointer;
+  &:hover {
+    background-color: $color_1;
+  }
+  transition: outline-width 0.2s;
+  outline: 0px solid $color_14;
+  &:active {
+    outline-width: 3px;
+  }
+  &:focus {
+    outline-width: 3px;
+  }
+}
+// блок ссылок на соцсети:
+.SocialLinks {
+  margin-top: 45px;
+  display: flex;
+  gap: 12px;
+  &__Item {
+    display: block;
+    min-width: 36px;
+    min-height: 36px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-color: $color_6;
+    border-radius: 18px;
   }
 }
 
 
+
+// блок описания, отзывов и доп. информации:
+.DescriptionReviewsAddInfo {
+  &__HeaderAndControl {
+    
+  }
+  &__HeaderItem {
+    
+    &--Choised {
+      
+    }
+  }
+}
 
 // ----------------------------------------------
 // секция с формами:

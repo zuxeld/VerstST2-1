@@ -6,13 +6,21 @@
         {
             "label": "sass",
             "type": "shell",
-            "command": "sass --watch style.scss:style.css"//"sass style.scss style.css --watch"
+            "command": "sass --watch style.scss:style.css",
+            "isBackground": true
         }
         
         {
             "label": "compass",
             "type": "shell",
             "command": "compass watch ."
+        }
+
+        {
+            "label": "Start Live Server",
+            "type": "shell",
+            "command": "code --new-window --wait --send-to-terminal \"editor.action.liveServer.openWithLiveServer\"",
+            "isBackground": true
         }
 
     ]

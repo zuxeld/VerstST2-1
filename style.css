@@ -65,6 +65,8 @@ body {
         font-size: 80%;
         position: relative;
         display: inline-block; }
+      .MainMenu__MenuItem--HoldMenuConteiner:hover .MainMenu__HoldedMenuItems {
+        visibility: visible; }
     .MainMenu__MenuItem--NumberOfStates::after {
       content: '3';
       display: inline-block;
@@ -86,7 +88,8 @@ body {
     min-width: 170px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
-    border-radius: 10px; }
+    border-radius: 10px;
+    visibility: hidden; }
   .MainMenu__HoldedMenuItem {
     display: block;
     padding: 10px 20px;
@@ -165,7 +168,7 @@ body {
 .SliderAndMainText {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 50px;
   margin-top: 80px; }
 
 .ProductFotoGalary {
@@ -182,8 +185,8 @@ body {
     height: 80px;
     object-fit: contain;
     padding: 10px;
-    border: 1px solid #aaa;
-    border-radius: 10px; }
+    border: 1px solid #e9ecef;
+    border-radius: 8px; }
   .ProductFotoGalary__GalaryScreen {
     position: relative;
     max-width: 100%;
@@ -208,8 +211,174 @@ body {
     scroll-snap-stop: always;
     pointer-events: none;
     user-select: none;
-    border: 1px solid #aaa;
-    border-radius: 10px; }
+    border: 1px solid #e9ecef;
+    border-radius: 8px; }
+
+.ProductInfoAndBuy__LongInfo {
+  margin-top: 25px;
+  font-size: 14px;
+  line-height: 21px;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 20px; }
+  .ProductInfoAndBuy__LongInfo ul {
+    margin-top: 15px;
+    list-style-type: none; }
+    .ProductInfoAndBuy__LongInfo ul li:not(:last-child) {
+      margin-bottom: 5px; }
+.ProductInfoAndBuy__BuingForm {
+  margin-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e9ecef; }
+.ProductInfoAndBuy__SelectColor {
+  display: flex;
+  gap: 25px;
+  font-size: 14px;
+  font-weight: 700; }
+  .ProductInfoAndBuy__SelectColor input {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 51%; }
+  .ProductInfoAndBuy__SelectColor input:checked::before {
+    outline: 1px solid #157efb;
+    outline-offset: 3px; }
+  .ProductInfoAndBuy__SelectColor input::before {
+    content: '';
+    position: relative;
+    top: -1px;
+    left: -1px;
+    z-index: 1;
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 51%;
+    pointer-events: none; }
+  .ProductInfoAndBuy__SelectColor .gray::before {
+    background-color: #eee; }
+  .ProductInfoAndBuy__SelectColor .black::before {
+    background-color: #000; }
+  .ProductInfoAndBuy__SelectColor .blue::before {
+    background-color: #24c; }
+  .ProductInfoAndBuy__SelectColor .grin::before {
+    background-color: #ac2; }
+.ProductInfoAndBuy__QTYbuttonAndLikeConteiner {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; }
+.ProductInfoAndBuy__QTY {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-size: 14px;
+  font-weight: 700; }
+.ProductInfoAndBuy__QTYchoiser {
+  min-height: 40px;
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e9ecef;
+  border-radius: 20px; }
+.ProductInfoAndBuy__QTYchoiserNumber {
+  max-width: 30px;
+  min-width: 30px;
+  pointer-events: none;
+  font-size: 14px;
+  font-weight: 400; }
+.ProductInfoAndBuy__QTYchoiserPlusMinus {
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer; }
+.ProductInfoAndBuy__Like {
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 900;
+  color: #aaa;
+  cursor: pointer; }
+.ProductInfoAndBuy__TechInfo {
+  margin-top: 20px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #aaa; }
+.ProductInfoAndBuy__TechInfoStart {
+  color: #000;
+  font-weight: 700; }
+.ProductInfoAndBuy__TechInfoTag {
+  transition: color 0.5s; }
+  .ProductInfoAndBuy__TechInfoTag:hover {
+    color: #157efb; }
+  .ProductInfoAndBuy__TechInfoTag--Choised {
+    color: #157efb;
+    text-decoration: underline; }
+
+.ProductShotInfo__Company {
+  font-size: 12px;
+  font-weight: 700; }
+.ProductShotInfo__Name {
+  margin-top: 10px;
+  font-size: 20px; }
+.ProductShotInfo__Stars {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 10px;
+  color: #e9ecef; }
+  .ProductShotInfo__Stars--Active {
+    color: #fc0; }
+.ProductShotInfo__Rewes {
+  display: inline-block;
+  font-size: 10px;
+  color: #aaa; }
+.ProductShotInfo__Price {
+  margin-top: 40px;
+  font-size: 25px;
+  font-weight: 700; }
+
+.AddToCardButton {
+  flex-grow: 1;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #157efb;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  color: #fff;
+  transition: background-color 0.5s;
+  cursor: pointer;
+  transition: outline-width 0.2s;
+  outline: 0px solid #c2dbfe; }
+  .AddToCardButton:hover {
+    background-color: #000; }
+  .AddToCardButton:active {
+    outline-width: 3px; }
+  .AddToCardButton:focus {
+    outline-width: 3px; }
+
+.SocialLinks {
+  margin-top: 45px;
+  display: flex;
+  gap: 12px; }
+  .SocialLinks__Item {
+    display: block;
+    min-width: 36px;
+    min-height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef;
+    border-radius: 18px; }
 
 /* секция с текстом:*/
 /* футер и его ссылки: */

@@ -110,7 +110,86 @@
         </div>
       </section>
       <!-- описание товара и форма добавления заказа в карзину: -->
-      
+      <section class="ProductInfoAndBuy">
+        <!-- блок краткой информации о товаре: -->
+        <div class="ProductShotInfo">
+          <div class="ProductShotInfo__Company">SAMSUNG</div>
+          <div class="ProductShotInfo__Name">Samsung New VR Headset Oculus 2.0</div>
+          <div class="ProductShotInfo__Stars">
+            <i class="fas fa-star ProductShotInfo__Stars--Active"></i>
+            <i class="fas fa-star ProductShotInfo__Stars--Active"></i>
+            <i class="fas fa-star ProductShotInfo__Stars--Active"></i>
+            <i class="fas fa-star ProductShotInfo__Stars--Active"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="ProductShotInfo__Rewes">3 Reviews</div>
+          <div class="ProductShotInfo__Price">$222.65</div>
+        </div>
+        <div class="ProductInfoAndBuy__LongInfo">
+          Without a strong digital platform, time and money are wasted, content sits unnoticed, and prospective clients disappear.
+          <ul>
+            <li><i class="bi bi-dash me-1"></i> VR 2 in 1, support 3D/4D AR</li>
+            <li><i class="bi bi-dash me-1"></i> Intergrate with all devices as mobile, PS4, PS5, etc</li>
+            <li><i class="bi bi-dash me-1"></i> Sync and Save data with Cloud</li>
+          </ul>
+        </div>
+        <form class="ProductInfoAndBuy__BuingForm" action="" id="buyForm">
+          <div class="ProductInfoAndBuy__SelectColor">
+            <p>Select Color</p>
+            <input type="radio" form="buyForm" name="color" class="gray" value="gray"></input>
+            <input type="radio" form="buyForm" name="color" class="black" value="black"></input>
+            <input type="radio" form="buyForm" name="color" class="blue" value="blue"></input>
+            <input type="radio" form="buyForm" name="color" class="grin" value="grin"></input>
+          </div>
+          <div class="ProductInfoAndBuy__QTYbuttonAndLikeConteiner">
+            <div class="ProductInfoAndBuy__QTY">
+              <label for="num">QTY</label>
+              <div class="ProductInfoAndBuy__QTYchoiser">
+                <div class="ProductInfoAndBuy__QTYchoiserPlusMinus"><i class="fas fa-minus"></i></div>
+                <input class="ProductInfoAndBuy__QTYchoiserNumber" type="number" id="num" value="1" min="1"></input>
+                <div class="ProductInfoAndBuy__QTYchoiserPlusMinus"><i class="fas fa-plus"></i></div>
+              </div>
+            </div>
+            <!-- блок кнопки добавления товара в карзину: -->
+            <input class="AddToCardButton" type="submit" value="Add To Cart"></input>
+            <div class="ProductInfoAndBuy__Like"><i class="fas fa-heart"></i></div>
+          </div>
+        </form>
+        <div class="ProductInfoAndBuy__TechInfo">
+          <span class="ProductInfoAndBuy__TechInfoStart">SKU:</span> VRO20-5112<br>
+          <span class="ProductInfoAndBuy__TechInfoStart">Category:</span> Technology<br>
+          <span class="ProductInfoAndBuy__TechInfoStart">Tags:</span>
+          <a class="ProductInfoAndBuy__TechInfoTag" href="#">samsung</a> , 
+          <a class="ProductInfoAndBuy__TechInfoTag ProductInfoAndBuy__TechInfoTag--Choised" href="#">headset</a> , 
+          <a class="ProductInfoAndBuy__TechInfoTag" href="#">vr</a> , 
+          <a class="ProductInfoAndBuy__TechInfoTag" href="#">oculus</a> , 
+          <a class="ProductInfoAndBuy__TechInfoTag" href="#">ar</a>
+        </div>
+        <div class="SocialLinks">
+          <a class="SocialLinks__Item" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="SocialLinks__Item" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="SocialLinks__Item" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="SocialLinks__Item" href="#"><i class="fab fa-pinterest"></i></a>
+          <a class="SocialLinks__Item" href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </section>
+      <!-- блок описания, отзывов и доп. информации: -->
+      <section class="DescriptionReviewsAddInfo">
+        <div class="DescriptionReviewsAddInfo__HeaderAndControl">
+          <div class="DescriptionReviewsAddInfo__HeaderItem DescriptionReviewsAddInfo__HeaderItem--Choised">Description</div>
+          <div class="DescriptionReviewsAddInfo__HeaderItem">Reviews (3)</div>
+          <div class="DescriptionReviewsAddInfo__HeaderItem">Additional Information</div>
+        </div>
+        <div class="DescriptionReviewsAddInfo__Description">
+          <p>Nulla velit turpis, tincidunt eget elit vitae, congue sodales metus. Sed sed neque luctus, sollicitudin sem sed, consectetur libero. Nunc mollis turpis velit, vitae laoreet sapien vehicula nec. Curabitur blandit ac libero eu dictum. Nullam vehicula hendrerit nisl eu laoreet. Cras non velit est. Vivamus tincidunt lacus est, at auctor elit finibus et. Maecenas a consequat metus. Aliquam ac nisl nec est mollis faucibus eget vitae eros. Duis bibendum vestibulum felis id mattis.</p>
+          <p>Suspendisse metus sapien, lacinia eu lectus sit amet, consequat mollis felis. Mauris convallis augue quis semper venenatis. Vivamus imperdiet leo at neque efficitur, id faucibus arcu eleifend. Vivamus in massa bibendum, aliquet est quis, ornare lacus.</p>
+        </div>
+        <div class="DescriptionReviewsAddInfo__Reviews">
+          .DescriptionReviewsAddInfo__ReviewItems+.DescriptionReviewsAddInfo__ReviewForm
+        </div>
+        <div class="DescriptionReviewsAddInfo__AddInfo"></div>
+      </section>
+
     </div>
 
 
