@@ -116,10 +116,10 @@
           <div class="ProductShotInfo__Company">SAMSUNG</div>
           <div class="ProductShotInfo__Name">Samsung New VR Headset Oculus 2.0</div>
           <div class="ProductShotInfo__Stars">
-            <i class="fas fa-star ProductShotInfo__Stars--Active"></i>
-            <i class="fas fa-star ProductShotInfo__Stars--Active"></i>
-            <i class="fas fa-star ProductShotInfo__Stars--Active"></i>
-            <i class="fas fa-star ProductShotInfo__Stars--Active"></i>
+            <i class="fas fa-star active"></i>
+            <i class="fas fa-star active"></i>
+            <i class="fas fa-star active"></i>
+            <i class="fas fa-star active"></i>
             <i class="fas fa-star"></i>
           </div>
           <div class="ProductShotInfo__Rewes">3 Reviews</div>
@@ -173,24 +173,81 @@
           <a class="SocialLinks__Item" href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </section>
-      <!-- блок описания, отзывов и доп. информации: -->
-      <section class="DescriptionReviewsAddInfo">
-        <div class="DescriptionReviewsAddInfo__HeaderAndControl">
-          <div class="DescriptionReviewsAddInfo__HeaderItem DescriptionReviewsAddInfo__HeaderItem--Choised">Description</div>
-          <div class="DescriptionReviewsAddInfo__HeaderItem">Reviews (3)</div>
-          <div class="DescriptionReviewsAddInfo__HeaderItem">Additional Information</div>
-        </div>
-        <div class="DescriptionReviewsAddInfo__Description">
-          <p>Nulla velit turpis, tincidunt eget elit vitae, congue sodales metus. Sed sed neque luctus, sollicitudin sem sed, consectetur libero. Nunc mollis turpis velit, vitae laoreet sapien vehicula nec. Curabitur blandit ac libero eu dictum. Nullam vehicula hendrerit nisl eu laoreet. Cras non velit est. Vivamus tincidunt lacus est, at auctor elit finibus et. Maecenas a consequat metus. Aliquam ac nisl nec est mollis faucibus eget vitae eros. Duis bibendum vestibulum felis id mattis.</p>
-          <p>Suspendisse metus sapien, lacinia eu lectus sit amet, consequat mollis felis. Mauris convallis augue quis semper venenatis. Vivamus imperdiet leo at neque efficitur, id faucibus arcu eleifend. Vivamus in massa bibendum, aliquet est quis, ornare lacus.</p>
-        </div>
-        <div class="DescriptionReviewsAddInfo__Reviews">
-          .DescriptionReviewsAddInfo__ReviewItems+.DescriptionReviewsAddInfo__ReviewForm
-        </div>
-        <div class="DescriptionReviewsAddInfo__AddInfo"></div>
-      </section>
-
     </div>
+
+    <!-- блок описания, отзывов и доп. информации: -->
+    <section class="DescriptionReviewsAddInfo">
+      <div class="DescriptionReviewsAddInfo__HeaderAndControl">
+        <div class="DescriptionReviewsAddInfo__HeaderItem DescriptionReviewsAddInfo__HeaderItem--Choised">Description</div>
+        <div class="DescriptionReviewsAddInfo__HeaderItem">Reviews (3)</div>
+        <div class="DescriptionReviewsAddInfo__HeaderItem">Additional Information</div>
+      </div>
+      <div class="DescriptionReviewsAddInfo__Description">
+        <p>Nulla velit turpis, tincidunt eget elit vitae, congue sodales metus. Sed sed neque luctus, sollicitudin sem sed, consectetur libero. Nunc mollis turpis velit, vitae laoreet sapien vehicula nec. Curabitur blandit ac libero eu dictum. Nullam vehicula hendrerit nisl eu laoreet. Cras non velit est. Vivamus tincidunt lacus est, at auctor elit finibus et. Maecenas a consequat metus. Aliquam ac nisl nec est mollis faucibus eget vitae eros. Duis bibendum vestibulum felis id mattis.</p>
+        <br> <p>Suspendisse metus sapien, lacinia eu lectus sit amet, consequat mollis felis. Mauris convallis augue quis semper venenatis. Vivamus imperdiet leo at neque efficitur, id faucibus arcu eleifend. Vivamus in massa bibendum, aliquet est quis, ornare lacus.</p>
+      </div>
+      <div class="DescriptionReviewsAddInfo__Reviews">
+        <div class="DescriptionReviewsAddInfo__ReviewItems">
+          <!-- блок отзыва: -->
+          <div class="ReviewBlock">
+            <div class="ReviewBlock__ReviewerFoto"><img src="https://iteck-html.themescamp.com/assets/img/team/2.jpeg" alt="ReviewerFoto1"></div>
+            <div class="ReviewBlock__ReviewerName">Robert Downey Jr</div>
+            <div class="ReviewBlock__Stars">
+              <i class="fas fa-star active"></i>
+              <i class="fas fa-star active"></i>
+              <i class="fas fa-star active"></i>
+              <i class="fas fa-star active"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="ReviewBlock__Text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Atume nusaate staman utra phone limo sumeria</div>
+          </div>
+          <div class="ReviewBlock">
+            <div class="ReviewBlock__ReviewerFoto"><img src="https://iteck-html.themescamp.com/assets/img/team/4.jpeg" alt="ReviewerFoto2"></div>
+            <div class="ReviewBlock__ReviewerName">Ben Chiwell</div>
+            <div class="ReviewBlock__Stars">
+              <i class="fas fa-star active"></i>
+              <i class="fas fa-star active"></i>
+              <i class="fas fa-star active"></i>
+              <i class="fas fa-star active"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="ReviewBlock__Text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Atume nusaate staman utra phone limo sumeria</div>
+          </div>
+        </div>
+        <div class="DescriptionReviewsAddInfo__ReviewAddForm">
+          <input class="DescriptionReviewsAddInfo__RaitingIn"></input>
+          <textarea type="text" class="DescriptionReviewsAddInfo__CommentIn" placeholder="Write your comment here"></textarea>
+          <div class="DescriptionReviewsAddInfo__NameEmailConteiner">
+            <input type="name" class="DescriptionReviewsAddInfo__NameIn" placeholder="Your Name *"></input>
+            <input type="email" class="DescriptionReviewsAddInfo__EmailIn" placeholder="Your Email *"></input>
+          </div>
+          <input class="DescriptionReviewsAddInfo__AutologinChekbox" type="checkbox">Save my name & email in this browser for next time I comment</input>
+          <input type="submit" class="DescriptionReviewsAddInfo__SubmitCommentButton"></input>
+        </div>
+      </div>
+      <div class="DescriptionReviewsAddInfo__AddInfo">
+        <div class="DescriptionReviewsAddInfo__AddInfoItem">
+          <p class="DescriptionReviewsAddInfo__AddInfoItemName">Weight</p>
+          <p>0.6 kg</p>
+        </div>
+        <div class="DescriptionReviewsAddInfo__AddInfoItem">
+          <p class="DescriptionReviewsAddInfo__AddInfoItemName">Dimensions</p>
+          <p>40 &#x00d7; 30 &#x00d7; 30 cm</p>
+        </div>
+        <div class="DescriptionReviewsAddInfo__AddInfoItem">
+          <p class="DescriptionReviewsAddInfo__AddInfoItemName">Color</p>
+          <p>White, Black, Red</p>
+        </div>
+        <div class="DescriptionReviewsAddInfo__AddInfoItem">
+          <p class="DescriptionReviewsAddInfo__AddInfoItemName">Year</p>
+          <p>2021</p>
+        </div>
+        <div class="DescriptionReviewsAddInfo__AddInfoItem">
+          <p class="DescriptionReviewsAddInfo__AddInfoItemName">Style</p>
+          <p>Classic, Modern</p>
+        </div>
+      </div>
+    </section>
 
 
     <!-- ----------------------------------------------------------- -->

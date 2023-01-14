@@ -1,4 +1,7 @@
 @charset "UTF-8";
+.active {
+  color: #fc0; }
+
 body {
   background-color: #fff;
   font-family: "Inter", sans-serif; }
@@ -68,7 +71,7 @@ body {
       .MainMenu__MenuItem--HoldMenuConteiner:hover .MainMenu__HoldedMenuItems {
         visibility: visible; }
     .MainMenu__MenuItem--NumberOfStates::after {
-      content: '3';
+      content: "3";
       display: inline-block;
       min-width: 32px;
       min-height: 20px;
@@ -243,7 +246,7 @@ body {
     outline: 1px solid #157efb;
     outline-offset: 3px; }
   .ProductInfoAndBuy__SelectColor input::before {
-    content: '';
+    content: "";
     position: relative;
     top: -1px;
     left: -1px;
@@ -379,6 +382,60 @@ body {
     align-items: center;
     background-color: #e9ecef;
     border-radius: 18px; }
+
+.DescriptionReviewsAddInfo__HeaderAndControl {
+  margin-top: 100px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 25px;
+  color: gray;
+  border-bottom: 1px solid #aaa; }
+.DescriptionReviewsAddInfo__HeaderItem {
+  cursor: pointer; }
+  .DescriptionReviewsAddInfo__HeaderItem--Choised {
+    font-weight: 700;
+    color: #000; }
+.DescriptionReviewsAddInfo__Description {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 55px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 28px;
+  color: gray; }
+.DescriptionReviewsAddInfo__Reviews {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 50px; }
+
+.ReviewBlock {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr;
+  grid-template-rows: 20px 1fr;
+  grid-template-areas: "foto name stars" "foto text text";
+  gap: 15px;
+  margin-bottom: 20px;
+  background-color: ghostwhite; }
+  .ReviewBlock__ReviewerFoto {
+    grid-area: foto;
+    position: relative;
+    max-width: 60px;
+    min-width: 60px;
+    max-height: 60px;
+    min-height: 60px;
+    clip-path: circle(50%); }
+    .ReviewBlock__ReviewerFoto img {
+      max-width: 100%;
+      object-fit: cover;
+      object-position: center center; }
+  .ReviewBlock__ReviewerName {
+    grid-area: name; }
+  .ReviewBlock__Stars {
+    grid-area: stars; }
+  .ReviewBlock__Text {
+    grid-area: text; }
 
 /* секция с текстом:*/
 /* футер и его ссылки: */
