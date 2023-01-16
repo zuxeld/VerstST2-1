@@ -7,20 +7,29 @@
             "label": "sass",
             "type": "shell",
             "command": "sass --watch style.scss:style.css",
-            "isBackground": true
-        }
+            // "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
         
         {
             "label": "compass",
             "type": "shell",
             "command": "compass watch ."
-        }
+        },
 
         {
             "label": "Start Live Server",
-            "type": "shell",
-            "command": "code --new-window --wait --send-to-terminal \"editor.action.liveServer.openWithLiveServer\"",
-            "isBackground": true
+            // "type": "shell",
+            "type": "process",
+            // "command": "code --new-window --wait --send-to-terminal \"editor.action.liveServer.openWithLiveServer\"",
+            // "command": "code editor.action.liveServer.openWithLiveServer"
+            "command": "code --enable-proposed-api ritwickdey.liveserver.goOnline"
+            // "isBackground": true
+            // "runOptions": {
+            //     "runOn": "folderOpen"
+            // }
         }
 
     ]

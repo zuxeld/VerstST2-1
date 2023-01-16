@@ -81,6 +81,7 @@
         </div>
         <a class="MainMenu__StartFreeTrialButton" href="">Start Free Trial </a>
       </div>
+      <button class="MainMenu__ViewButton"></button>
     </menu>
     
     <nav class="Navigation">
@@ -188,6 +189,7 @@
       </div>
       <div class="DescriptionReviewsAddInfo__Reviews">
         <div class="DescriptionReviewsAddInfo__ReviewItems">
+          <h3>02 Reviews</h3>
           <!-- блок отзыва: -->
           <div class="ReviewBlock">
             <div class="ReviewBlock__ReviewerFoto"><img src="https://iteck-html.themescamp.com/assets/img/team/2.jpeg" alt="ReviewerFoto1"></div>
@@ -214,16 +216,24 @@
             <div class="ReviewBlock__Text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Atume nusaate staman utra phone limo sumeria</div>
           </div>
         </div>
-        <div class="DescriptionReviewsAddInfo__ReviewAddForm">
-          <input class="DescriptionReviewsAddInfo__RaitingIn"></input>
-          <textarea type="text" class="DescriptionReviewsAddInfo__CommentIn" placeholder="Write your comment here"></textarea>
-          <div class="DescriptionReviewsAddInfo__NameEmailConteiner">
-            <input type="name" class="DescriptionReviewsAddInfo__NameIn" placeholder="Your Name *"></input>
-            <input type="email" class="DescriptionReviewsAddInfo__EmailIn" placeholder="Your Email *"></input>
+        <form class="DescriptionReviewsAddInfo__ReviewAddForm" id="ReviewAddForm" action="" >
+          <h3>Add A Review</h3>
+          <label for="RaitingIn" class="DescriptionReviewsAddInfo__RaitingInLabal">YOUR RATING</label>
+          <div class="DescriptionReviewsAddInfo__RaitingInConteiner">
+            <input type="radio" name="star" class="DescriptionReviewsAddInfo__RaitingIn" id="ReviewAddForm" form="RaitingIn" value="1"></input>
+            <input type="radio" name="star" class="DescriptionReviewsAddInfo__RaitingIn" id="ReviewAddForm" form="RaitingIn" value="2"></input>
+            <input type="radio" name="star" class="DescriptionReviewsAddInfo__RaitingIn" id="ReviewAddForm" form="RaitingIn" value="3"></input>
+            <input type="radio" name="star" class="DescriptionReviewsAddInfo__RaitingIn" id="ReviewAddForm" form="RaitingIn" value="4"></input>
+            <input type="radio" name="star" class="DescriptionReviewsAddInfo__RaitingIn" id="ReviewAddForm" form="RaitingIn" value="5"></input>
           </div>
-          <input class="DescriptionReviewsAddInfo__AutologinChekbox" type="checkbox">Save my name & email in this browser for next time I comment</input>
-          <input type="submit" class="DescriptionReviewsAddInfo__SubmitCommentButton"></input>
-        </div>
+          <textarea type="text" class="DescriptionReviewsAddInfo__CommentIn" form="RaitingIn" placeholder="Write your comment here"></textarea>
+          <div class="DescriptionReviewsAddInfo__NameEmailConteiner">
+            <input type="name" class="DescriptionReviewsAddInfo__NameIn" form="RaitingIn" placeholder="Your Name *"></input>
+            <input type="email" class="DescriptionReviewsAddInfo__EmailIn" form="RaitingIn" placeholder="Your Email *"></input>
+          </div>
+          <input class="DescriptionReviewsAddInfo__AutologinChekbox" type="checkbox" id="AutologinChekbox" form="RaitingIn"> <label for="AutologinChekbox"> Save my name & email in this browser for next time I comment</label></input>
+          <input type="submit" class="DescriptionReviewsAddInfo__SubmitCommentButton" form="RaitingIn" value="Submit Comment"></input>
+        </form>
       </div>
       <div class="DescriptionReviewsAddInfo__AddInfo">
         <div class="DescriptionReviewsAddInfo__AddInfoItem">
@@ -249,6 +259,110 @@
       </div>
     </section>
 
+    <!-- блок слайдера похожих продуктов: -->
+    <section class="RelatedProductsSlider">
+      <h3 class="RelatedProductsSlider__head">Related Products</h3>
+      <div class="RelatedProductsSlider__SliderScreen">
+        <!-- блок карточки товара: -->
+        <div class="ProductCard">
+          <div class="ProductCard__DinamicConteiner">
+            <div class="ProductCard__ProductFoto" style="background-image: url(https://iteck-html.themescamp.com/assets/img/shop/products/7.png);">
+              <!-- <img src="https://iteck-html.themescamp.com/assets/img/shop/products/7.png" alt="ProductFoto"> -->
+            </div>
+            <div class="ProductCard__blockProductShotInfo">
+              <!-- блок краткой информации о товаре: -->
+              <div class="ProductShotInfo">
+                <div class="ProductShotInfo__Company">dji2</div>
+                <div class="ProductShotInfo__Name">DJI II Phantom 4 Quad Drone With Camera</div>
+                <div class="ProductShotInfo__Stars">
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="ProductShotInfo__Rewes">3 Reviews</div>
+                <div class="ProductShotInfo__Price">$197.00</div>
+              </div>
+            </div>
+            <div class="ProductCard__PromotionAlarm">
+              <div class="ProductCard__PromotionAlarmPrise">$521.00</div>
+              <div class="ProductCard__PromotionAlarmBanner">15% off</div>
+            </div>
+            <div class="ProductCard__blockAddToCardButton">
+              <!-- блок кнопки добавления товара в карзину: -->
+              <input class="AddToCardButton" type="submit" value="Add To Cart"></input>
+            </div>
+            <div class="ProductCard__LikeButton"><i class="fas fa-heart"></i></div>
+          </div>
+        </div>
+        <!-- блок карточки товара: -->
+        <div class="ProductCard">
+          <div class="ProductCard__DinamicConteiner">
+            <div class="ProductCard__ProductFoto" style="background-image: url(https://iteck-html.themescamp.com/assets/img/shop/products/7.png);">
+              <!-- <img src="https://iteck-html.themescamp.com/assets/img/shop/products/7.png" alt="ProductFoto"> -->
+            </div>
+            <div class="ProductCard__blockProductShotInfo">
+              <!-- блок краткой информации о товаре: -->
+              <div class="ProductShotInfo">
+                <div class="ProductShotInfo__Company">dji2</div>
+                <div class="ProductShotInfo__Name">DJI II Phantom 4 Quad Drone With Camera</div>
+                <div class="ProductShotInfo__Stars">
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="ProductShotInfo__Rewes">3 Reviews</div>
+                <div class="ProductShotInfo__Price">$197.00</div>
+                <div class="ProductShotInfo__PromotionPrice">$521.00</div>
+
+              </div>
+            </div>
+            <div class="ProductCard__PromotionAlarmBanner ProductCard__PromotionAlarmBanner--NewProduct">NEW</div>
+            <div class="ProductCard__blockAddToCardButton">
+              <!-- блок кнопки добавления товара в карзину: -->
+              <input class="AddToCardButton" type="submit" value="Add To Cart"></input>
+            </div>
+            <div class="ProductCard__LikeButton ProductCard__LikeButton--Liked"><i class="fas fa-heart"></i></div>
+          </div>
+        </div>
+        <!-- блок карточки товара: -->
+        <div class="ProductCard">
+          <div class="ProductCard__DinamicConteiner">
+            <div class="ProductCard__ProductFoto" style="background-image: url(https://iteck-html.themescamp.com/assets/img/shop/products/7.png);">
+              <!-- <img src="https://iteck-html.themescamp.com/assets/img/shop/products/7.png" alt="ProductFoto"> -->
+            </div>
+            <div class="ProductCard__blockProductShotInfo">
+              <!-- блок краткой информации о товаре: -->
+              <div class="ProductShotInfo">
+                <div class="ProductShotInfo__Company">dji2</div>
+                <div class="ProductShotInfo__Name">DJI II Phantom 4 Quad Drone With Camera</div>
+                <div class="ProductShotInfo__Stars">
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="ProductShotInfo__Rewes">3 Reviews</div>
+                <div class="ProductShotInfo__Price">$197.00</div>
+              </div>
+            </div>
+            <div class="ProductCard__PromotionAlarm ProductCard__PromotionAlarm--PriceDown">
+              <div class="ProductCard__PromotionAlarmPrise">$521.00</div>
+              <div class="ProductCard__PromotionAlarmBanner">15% off</div>
+            </div>
+            <div class="ProductCard__blockAddToCardButton">
+              <!-- блок кнопки добавления товара в карзину: -->
+              <input class="AddToCardButton" type="submit" value="Add To Cart"></input>
+            </div>
+            <div class="ProductCard__LikeButton"><i class="fas fa-heart"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ----------------------------------------------------------- -->
     <!-- секция с формами: -->
