@@ -579,6 +579,19 @@ body {
     font-size: 1em;
     color: $color_9;
   }
+  &__PriceConteiner {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    &--Promotion {
+      &>[class*="_Price"] {
+        color: $color_19;
+      }
+      &>[class*="PromotionPrice"] {
+        visibility: visible;
+      }
+    }
+  }
   &__Price {
     margin-top: 40px;
 
@@ -586,6 +599,7 @@ body {
     font-weight: 700;
   }
   &__PromotionPrice {
+    visibility: hidden;
     font-size: 11px;
     font-weight: 700;
     color: $color_9;
@@ -637,6 +651,12 @@ body {
 
     background-color: $color_6;
     border-radius: 18px;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: $color_3;
+      color: $color_2;
+    }
   }
 }
 
@@ -879,17 +899,33 @@ body {
     position: relative;
     display: flex;
     gap: 24px;
-    max-height: 310px;
+    max-height: 330px;
+
+    overflow-x: scroll;
   }
 
 }
 
-// блок карточки товара:
+// блок карточки товара(в слайдере похожих продуктов):
 .ProductCard {
+  flex-grow: 1;
   position: relative;
   max-height: 310px;
   min-height: 310px;
-  width: 210px;
+  width: calc(100% / 5 - 20px);
+  min-width: calc(100% / 5 - 20px);
+  @media screen and (max-width: 1200px) {
+    width: calc(100% / 3 - 20px);
+  min-width: calc(100% / 3 - 20px);
+  }
+  @media screen and (max-width: 980px) {
+    width: calc(100% / 2 - 20px);
+  min-width: calc(100% / 2 - 20px);
+  }
+  @media screen and (max-width: 790px) {
+    width: calc(100% / 1 - 20px);
+    min-width: calc(100% / 1 - 20px);
+  }
   padding: 15px;
   overflow:hidden;
 
@@ -897,13 +933,19 @@ body {
   border-radius: 10px;
 
   &__DinamicConteiner {
+    // position: relative;
+    // height: 326px;
+    // &:hover {
+
+    // }
   }
   &__ProductFoto {
+    margin: 0 auto;
     width: 170px;
-    height: 167px;
+    height: 167px;//39%;//167/326
     background-repeat: no-repeat;
     background-size: contain;
-    background-position-x: center;
+    background-position: center center;
 
     transition: height 0.5s;
     &:hover {
@@ -913,25 +955,31 @@ body {
   &__blockProductShotInfo {
     &>* {
       font-size: 6px;
+      min-height: 112px;
+      position: relative;
     }
-    &>*>[class*="Company"] {
+    & [class*="Company"] {
       font-size: 10px;
     }
-    &>*>[class*="Stars"],[class*="Rewes"] {
+    & [class*="Stars"],[class*="Rewes"] {
       margin-top: 10px;
       font-size: 9px;
     }
-    &>*>[class*="Price"] {
-      margin-top: 20px;
+    & [class*="PriceConteiner"] {
+      position: absolute;
+      bottom: 0;
     }
-  }
+   
  
   &__PromotionAlarmBanner {
+    visibility: hidden;
+    position: absolute;
     top: 15px;
     left: 15px;
 
     border-radius: 3px;
     padding: 3px 5px;
+    font-size: 9px;
     &--PriceDown {
       visibility: visible;
       background-color: $color_19;
@@ -968,209 +1016,70 @@ body {
 
 }
 
-// ----------------------------------------------
-// секция с формами:
-// .sub_forms {
-//   padding: 0 20px 0 20px;
-//   margin-bottom: 120px;
 
-//   color: $color_1;
-//   font: {
-//     family: $font_fam_1;
-//     size: 16px;
-//   }
-
-//   * {
-//     display: block;
-//   }
-//   label {
-//     margin-bottom: 4px;
-//   }
-//   input {
-//     text-indent: 11px;
-//     width: 100%;
-//     height: 46px;
-
-//     font: {
-//       size: inherit;
-//       family: $font_fam_1;
-//       // weight: 500;
-//     }
-//     color: inherit;
-//     border: none;
-//     border-radius: 23px;
-
-//     &:focus {
-//       outline: none;
-//     }
-//   }
-//   .sub {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin: 0;
-
-//     border: none;
-//     font-weight: bold;
-//     color: $color_2;
-//     text-transform: uppercase;
-//     // word-spacing: 4px;
-//     background-color: $color_1;
-
-//     &:hover {
-//       background-color: $color_7;
-//     }
-//   }
-// }
-
-// .forms_cont {
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   gap: 30px;
-//   margin-bottom: 33px;
-// }
-
-/* секция с текстом:*/
-// .main_text {
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr);
-//   gap: 33px;
-//   margin-bottom: 80px;
-
-//   text-align: center;
-//   color: $color_1;
-//   > * {
-//     // max-height: 100%;
-//     // margin-bottom: 30px;
-//     line-height: 200%;
-//   }
-//   h2 {
-//     margin-bottom: 20px;
-
-//     font-size: 25px;
-//     font-family: $font_fam_1;
-//     font-weight: bold;
-//   }
-//   p {
-//     font-family: $font_fam_1;
-//     // letter-spacing: 150%;
-//     font-size: 18px;
-//   }
-//   .text_blok {
-//     a {
-//       &:link {
-//         font-weight: bold;
-//         color: $color_1;
-//         text-decoration: none;
-//         border-bottom: 1px solid $color_3;
-//       }
-
-//       &:visited {
-//         color: $color_1;
-//         text-decoration: none;
-//         border-bottom: 1px solid $color_3;
-//       }
-
-//       &:active {
-//         color: $color_1;
-//         text-decoration: none;
-//         border-bottom: 1px solid $color_1;
-//       }
-//       &:hover {
-//         color: $color_1;
-//         text-decoration: none;
-//         border-bottom: 1px solid $color_1;
-//       }
-//     }
-//   }
-//   .marked_text {
-//     font-weight: bold;
-//   }
-// }
-
-/* футер и его ссылки: */
-.footer {
-  text-align: center;
-  padding: 3em;
-
-  font-family: $font_fam_1;
-  font-size: 14px;
-  background-color: $color_6;
-  color: $color_2;
-  a {
-    &:link {
-      color: $color_4;
+/* блок футера: */
+.Footer {
+  max-width: 1150px;
+  margin: 0 auto;
+  margin-top: 220px;
+  padding: 0 15px;
+  
+  &__ShotInfo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @media screen and (max-width: 980px) {
+      grid-template-columns: repeat(2, 1fr);
     }
-    &:visited {
-      color: $color_4;
+    @media screen and (max-width: 570px) {
+      grid-template-columns: repeat(1, 1fr);
     }
-
-    &:active {
-      color: $color_4;
-    }
-
+    gap: 50px;
+    
+    font-size: 12px;
+    line-height: 24px;
+  }
+  &__ShotInfoItem {
+    
+  }
+  &__ShotInfoItemHead {
+    margin-bottom: 30px;
+    
+    font-size: 14px;
+  }
+  &__ShotInfoItemLink {
+    display: block;
+    margin-bottom: 5px;
+    
+    transition: color 0.5s;
     &:hover {
-      text-decoration: none;
-      color: $color_4;
+      color: $color_3;
     }
   }
+  &__End {
+    position: relative;
+    margin-top: 90px;
+    margin-bottom: 35px;
+    
+
+    text-align: center;
+    font-size: 13px;
+  }
+  &__EndLogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &__EndLogoLink {
+    font-weight: 700;
+    text-decoration: underline;
+    transition: color 0.3s;
+    &:hover {
+      color: $color_3;
+    }
+  }
+
 }
-
-// уменьшаются отступы в шапке:
-// @media (max-width: 1200px) {
-//   .header {
-//     padding-top: 80px;
-//   }
-// }
-
-// // уменьшаестся отступ в шапке:
-// @media (max-width: 980px) {
-//   .header {
-//     padding-top: 60px;
-//   }
-//   .sub_forms {
-//     margin-bottom: 80px;
-//   }
-// }
-
-// ширина main уменьшается, отступы от main до краёв экрана уменьшаются,
-//   размер шрифта гл. заг. уменьшается, блоки текста встают в две колонки:
-// @media (max-width: 750px) {
-//   .header {
-//     h1 {
-//       font-size: 3rem;
-//     }
-//   }
-//   .main {
-//     max-width: 530px;
-//   }
-//   .main_text {
-//     grid-template-columns: repeat(2, 1fr);
-//   }
-// }
-
-// // ширина main уменьшается, отступы от main до краёв экрана уменьшаются,
-// //   размер шрифта гл. заг. уменьшается, блоки с текстом и формы встают в одну колонку:
-// @media (max-width: 560px) {
-//   .header {
-//     h1 {
-//       font-size: 2.125rem;
-//     }
-//   }
-//   .main {
-//     max-width: 330px;
-//   }
-//   .main_text {
-//     grid-template-columns: repeat(1, 1fr);
-//   }
-//   .forms_cont {
-//     grid-template-columns: repeat(1, 1fr);
-//   }
-
-//   .sub_forms {
-//     padding: {
-//       left: 0;
-//       right: 0;
-//     }
-//   }
-// }
