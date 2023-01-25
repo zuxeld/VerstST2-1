@@ -46,6 +46,7 @@ body {
 
 .MainMenu {
   position: relative;
+  transition: top 0.3s;
   padding: 24px 43px;
   display: flex;
   justify-content: space-between;
@@ -53,6 +54,13 @@ body {
   font-size: 12px;
   font-weight: 700;
   background-color: #fff; }
+  .MainMenu--Stiky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
   .MainMenu__MenuItems {
     display: flex;
     justify-content: space-between;
@@ -78,8 +86,10 @@ body {
         font-size: 80%;
         position: relative;
         display: inline-block; }
-      .MainMenu__MenuItem--HoldMenuConteiner:hover .MainMenu__HoldedMenuItems {
-        visibility: visible; }
+      .MainMenu__MenuItem--HoldMenuConteiner--jsActive .MainMenu__HoldedMenuItems {
+        display: block; }
+      .MainMenu__MenuItem--HoldMenuConteiner--jsActive > a {
+        pointer-events: stroke; }
     .MainMenu__MenuItem--NumberOfStates::after {
       content: "3";
       display: inline-block;
@@ -95,14 +105,23 @@ body {
   .MainMenu__HoldedMenuItems {
     position: absolute;
     z-index: 100;
-    top: 40px;
+    top: 35px;
     left: -13px;
     padding: 10px 0;
     min-width: 170px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
     border-radius: 10px;
-    visibility: hidden; }
+    display: none; }
+    .MainMenu__HoldedMenuItems:hover {
+      display: block; }
+    @media screen and (max-width: 990px) {
+      .MainMenu__HoldedMenuItems {
+        position: static;
+        overflow: hidden;
+        display: none;
+        margin-top: 10px;
+        margin-bottom: -5px; } }
   .MainMenu__HoldedMenuItem {
     display: block;
     padding: 10px 20px;

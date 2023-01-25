@@ -10,7 +10,7 @@
   <!-- <meta name="theme-color" content="#157efb"> -->
   
   <!-- сброс стилей: -->
-  <link rel="stylesheet" href="my_reset.css">
+  <link rel="stylesheet" href="./my_reset.css">
   <!--шрифт текста:-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,400i,700">
   <!-- шрифт иконок(font awersome): -->
@@ -18,77 +18,81 @@
   <link rel="stylesheet" href="./fonts/bootstrap-icons.css" crossorigin="anonymous">
 
   <!--главные стили:-->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
+  <!-- скрипты: -->
+  <script type="module" src="./scripts.js"></script>
 </head>
  
 <body>
   <!-- шапка: -->
-  <!-- блок банер "скидка 20% зарегистрировавшимся": -->
-  <header class="NewAccPromotionHeader">
-    <div class="NewAccPromotionHeader__ButtonSpecial">
-      Special
+  <header>
+    <div class="NewAccPromotionHeader">
+      <!-- блок банер "скидка 20% зарегистрировавшимся": -->
+      <div class="NewAccPromotionHeader__ButtonSpecial">
+        Special
+      </div>
+      <img class="NewAccPromotionHeader__SmileIcon" src="https://iteck-html.themescamp.com/assets/img/icons/nav_icon/imoj_heart.png" alt="SmileIcon">
+      <div class="NewAccPromotionHeader__Text">
+        Get <span class="NewAccPromotionHeader__TextMark">20% Discount</span> Get for New Account 
+      </div>
+      <a class="NewAccPromotionHeader__RegistrationLink" href="">
+        Register Now
+      </a>
     </div>
-    <img class="NewAccPromotionHeader__SmileIcon" src="https://iteck-html.themescamp.com/assets/img/icons/nav_icon/imoj_heart.png" alt="SmileIcon">
-    <div class="NewAccPromotionHeader__Text">
-      Get <span class="NewAccPromotionHeader__TextMark">20% Discount</span> Get for New Account 
-    </div>
-    <a class="NewAccPromotionHeader__RegistrationLink" href="">
-      Register Now
-    </a>
+    <!-- плавающий блок с лого, навигацией и логингом:-->
+    <menu class="MainMenu">
+      <img class="MainMenu__Logo" src="https://iteck-html.themescamp.com/assets/img/logo_home5.png" alt="big_logo">
+      <div class="MainMenu__MenuItems">
+        <div class="MainMenu__MenuItem MainMenu__MenuItem--HoldMenuConteiner">
+          <a href="#">Homes </a>
+          <div class="MainMenu__HoldedMenuItems">
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-it-solutions2.html">It Solution Creative</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-app-landing.html">App Landing</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-saas-technology.html">Saas Technology</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-marketing-startup.html">Marketing Startup</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-it-solutions.html">It Solution</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-software-company.html">Software Company</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-digital-agency.html">Digital Agency</a>
+          </div>
+        </div>
+        <div class="MainMenu__MenuItem MainMenu__MenuItem--HoldMenuConteiner">
+          <a href="#">Pages </a>
+          <div class="MainMenu__HoldedMenuItems">
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-about-5.html">about</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-product-5.html">product</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-services-5.html">services</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-shop-5.html">shop</a>
+            <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-single-project-5.html">single project</a>
+          </div>
+        </div>
+        <div class="MainMenu__MenuItem">
+          <a href="https://iteck-html.themescamp.com/page-portfolio-5.html">Portfolio</a>
+        </div>
+        <div class="MainMenu__MenuItem MainMenu__MenuItem--NumberOfStates">
+          <a href="https://iteck-html.themescamp.com/page-blog-5.html">Blog</a>
+        </div>
+        <div class="MainMenu__MenuItem">
+          <a href="https://iteck-html.themescamp.com/page-contact-5.html">Contact Us</a>
+        </div>
+      </div>
+      <div class="MainMenu__LoggingControl">
+        <div class="MainMenu__SignIn">
+          <a href="">Sign In</a> 
+        </div>
+        <a class="MainMenu__StartFreeTrialButton" href="">Start Free Trial </a>
+      </div>
+      <button class="MainMenu__ViewButton"></button>
+    </menu>
+    
+    <nav class="Navigation">
+      <a href="#" class="Navigation__Points">Home</a>
+      <div class="Navigation__Braker">/</div>
+      <a href="#" class="Navigation__Points">Iteck&#x2019;s Store</a>
+      <div class="Navigation__Braker">/</div>
+      <a href="#" class="Navigation__Points">Samsung New VR Headset Oculus 2.0</a>
+    </nav>
   </header>
   
-  <!-- плавающий блок с лого, навигацией и логингом:-->
-  <menu class="MainMenu">
-    <img class="MainMenu__Logo" src="https://iteck-html.themescamp.com/assets/img/logo_home5.png" alt="big_logo">
-    <div class="MainMenu__MenuItems">
-      <div class="MainMenu__MenuItem MainMenu__MenuItem--HoldMenuConteiner">
-        <a href="#">Homes </a>
-        <div class="MainMenu__HoldedMenuItems">
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-it-solutions2.html">It Solution Creative</a>
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-app-landing.html">App Landing</a>
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-saas-technology.html">Saas Technology</a>
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-marketing-startup.html">Marketing Startup</a>
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-it-solutions.html">It Solution</a>
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-software-company.html">Software Company</a>
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/home-digital-agency.html">Digital Agency</a>
-        </div>
-      </div>
-      <div class="MainMenu__MenuItem MainMenu__MenuItem--HoldMenuConteiner">
-        <a href="#">Pages </a>
-        <div class="MainMenu__HoldedMenuItems">
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-about-5.html">about</a>
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-product-5.html">product</a>
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-services-5.html">services</a>
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-shop-5.html">shop</a>
-          <a class="MainMenu__HoldedMenuItem" href="https://iteck-html.themescamp.com/page-single-project-5.html">single project</a>
-        </div>
-      </div>
-      <div class="MainMenu__MenuItem">
-        <a href="https://iteck-html.themescamp.com/page-portfolio-5.html">Portfolio</a>
-      </div>
-      <div class="MainMenu__MenuItem MainMenu__MenuItem--NumberOfStates">
-        <a href="https://iteck-html.themescamp.com/page-blog-5.html">Blog</a>
-      </div>
-      <div class="MainMenu__MenuItem">
-        <a href="https://iteck-html.themescamp.com/page-contact-5.html">Contact Us</a>
-      </div>
-    </div>
-    <div class="MainMenu__LoggingControl">
-      <div class="MainMenu__SignIn">
-        <a href="">Sign In</a> 
-      </div>
-      <a class="MainMenu__StartFreeTrialButton" href="">Start Free Trial </a>
-    </div>
-    <button class="MainMenu__ViewButton"></button>
-  </menu>
-  
-  <nav class="Navigation">
-    <a href="#" class="Navigation__Points">Home</a>
-    <div class="Navigation__Braker">/</div>
-    <a href="#" class="Navigation__Points">Iteck&#x2019;s Store</a>
-    <div class="Navigation__Braker">/</div>
-    <a href="#" class="Navigation__Points">Samsung New VR Headset Oculus 2.0</a>
-  </nav>
   
   <main class="main">
     <!-- _контейнер слайдера и описания товара: -->
@@ -536,7 +540,6 @@
       © 2022 Copyrights by <a href="#" class="Footer__EndLogoLink">Iteck Co.</a> All Rights Reserved. Designed by <a href="https://themeforest.net/user/themescamp" class="Footer__EndLogoLink">ThemesCamp</a> 
     </div>
   </footer>
-  <!-- <script src="scripts.js"></script> -->
 </body>
 
 </html>

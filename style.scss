@@ -100,9 +100,8 @@ body {
 
 // плавающий блок с лого, навигацией и логингом:
 .MainMenu {
-  // position: sticky;
-  // top: -50px;
   position: relative;
+  transition: top 0.3s;
   padding: 24px 43px;
 
   display: flex;
@@ -112,6 +111,17 @@ body {
   font-size: 12px;
   font-weight: 700;
   background-color: $color_2;
+
+  // модиф. "скользящего" состояния:
+  &--Stiky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
 
   // блок с меню:
   &__MenuItems {
@@ -148,8 +158,21 @@ body {
         // top: 3px;
         display: inline-block;
       }
-      &:hover .MainMenu__HoldedMenuItems {
-        visibility: visible;
+      // --jsActive
+      &--jsActive .MainMenu__HoldedMenuItems {
+        display: block;
+        // visibility: visible;
+        // @media screen and (max-width: 990px){
+        //   display: none;
+        // }
+      }
+      &--jsActive>a {
+        // color: $color_3;
+        pointer-events: stroke;
+        
+        // @media screen and (max-width: 990px){
+        //   display: none;
+        // }
       }
     }
     // - для указания числа статей (в блоге)
@@ -176,7 +199,7 @@ body {
   &__HoldedMenuItems {
     position: absolute;
     z-index: 100;
-    top: 40px;
+    top: 35px;
     left: -13px;
     padding: 10px 0;
     min-width: 170px;
@@ -184,7 +207,22 @@ body {
     background-color: $color_2;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
     border-radius: 10px;
-    visibility: hidden;
+    // transition: 0.5s;
+    // transition-duration: 1s;
+    display: none;
+    // visibility: hidden;
+
+    &:hover {
+      display: block;
+    }
+
+    @media screen and (max-width: 990px){
+      position: static;
+      overflow: hidden;
+      display: none;
+      margin-top: 10px;
+      margin-bottom: -5px;
+    }
   }
   // элемент выпадающего меню:
   &__HoldedMenuItem {
