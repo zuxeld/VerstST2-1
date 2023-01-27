@@ -34,7 +34,7 @@ let DOM_el = document.querySelectorAll('.'+CSSclass);
 console.log(DOM_el);
 for (let i = 0; i < DOM_el.length; i++) {
     DOM_el[i].addEventListener("mouseenter", fActive_Gen(DOM_el[i], CSSclass,'--jsActive'));
-    DOM_el[i].addEventListener("mouseout", fActive_Gen(DOM_el[i], CSSclass,'--jsActive',false));    
+    DOM_el[i].addEventListener("mouseleave", fActive_Gen(DOM_el[i], CSSclass,'--jsActive',false));    
 }
 
 // проверка работы функции фильтрации:
