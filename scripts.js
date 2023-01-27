@@ -1,5 +1,19 @@
 console.log("гл. скрипт подключён");
 
+// функция для фильтрации типа данных:
+function TypeFilter(argArray) {
+    for (let i = 0; i < argArray.length; i++) {
+        if (typeof argArray[i][0] !== argArray[i][1]) {
+            // let errObj = TypeError;
+            // errObj.message = 'Custom type filtration failed!';
+            return function () {
+                console.error(`Custom type filtration failed:
+                Type is not <` + String(argArray[i][1]) + '>');
+            } 
+        }
+    }
+}
+
 // функция-генератор функций-обработчиков:
 function fActive_Gen(DOM_el, CSSclass, CSSclass_modifer, revers = true) {
     if (revers) {
@@ -22,6 +36,9 @@ for (let i = 0; i < DOM_el.length; i++) {
     DOM_el[i].addEventListener("mouseenter", fActive_Gen(DOM_el[i], CSSclass,'--jsActive'));
     DOM_el[i].addEventListener("mouseout", fActive_Gen(DOM_el[i], CSSclass,'--jsActive',false));    
 }
+
+// проверка работы функции фильтрации:
+TypeFilter([['fghhj', 'string'],["true", 'boolean']])();
 
 // выпададение списоков меню при наведении мыши:
 // let elements = 
