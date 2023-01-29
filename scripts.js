@@ -15,26 +15,32 @@ function TypeFilter(argArray) {
 }
 
 // функция-генератор функций-обработчиков:
-function createHendlerFun(DOM_el, CSSclass, CSSclass_modifer,  revers = false, minWinWidth=0, maxWinWidth=Infinity) {
+function createHendlerFun(DOM_element, CSSclass, CSSclass_modifer,  revers = false, minWinWidth=0, maxWinWidth=Infinity, callback=() =>{}) {
     if (revers === false) {
         return function hendlerFun() {
             if (window.innerWidth <= maxWinWidth && window.innerWidth > minWinWidth) {
-                DOM_el.classList.add(String(CSSclass) + String(CSSclass_modifer));
-                console.log('обр соб');
+                DOM_element.classList.add(String(CSSclass) + String(CSSclass_modifer));
+                callback(DOM_element, CSSclass, CSSclass_modifer,  revers, minWinWidth, maxWinWidth);
+                // console.log('обр соб');
+                console.trace();
             }
         }
     } else if (revers === true) {
         return function hendlerFun() {
             if (window.innerWidth <= maxWinWidth && window.innerWidth > minWinWidth) {
-                DOM_el.classList.remove(String(CSSclass) + String(CSSclass_modifer));
-                console.log('обр соб 2');
+                DOM_element.classList.remove(String(CSSclass) + String(CSSclass_modifer));
+                callback();
+                // console.log('обр соб 2');
+                console.trace();
             }
         }
     } else if (revers === 'toggle'){
         return function hendlerFun() {
             if (window.innerWidth <= maxWinWidth && window.innerWidth > minWinWidth) {
-                DOM_el.classList.toggle(String(CSSclass) + String(CSSclass_modifer));
-                console.log('обр соб 2');
+                DOM_element.classList.toggle(String(CSSclass) + String(CSSclass_modifer));
+                callback();
+                // console.log('обр соб 2');
+                console.trace();
             }
         }
     } else {
@@ -44,12 +50,25 @@ function createHendlerFun(DOM_el, CSSclass, CSSclass_modifer,  revers = false, m
 }
 // ДОМ-элемент с нужным классом:
 let CSSclass = "MainMenu__MenuItem--HoldMenuConteiner";
-let DOM_el = document.querySelectorAll('.'+CSSclass);
-console.log(DOM_el);
-for (let i = 0; i < DOM_el.length; i++) {
-    DOM_el[i].addEventListener("mouseenter", createHendlerFun(DOM_el[i], CSSclass,'--jsActive', false, 770));
-    DOM_el[i].addEventListener("mouseleave", createHendlerFun(DOM_el[i], CSSclass,'--jsActive', true, 770));  
-    DOM_el[i].addEventListener("click", createHendlerFun(DOM_el[i], CSSclass,'--jsActive', "toggle", 0, 770));
+let DOM_elements = document.querySelectorAll('.'+CSSclass);
+
+// console.log(DOM_elements);
+// console.table([['сообщение test','ещё сообщение'],['ещё2','ещё3']]);
+// console.trace();
+// console.warn("message");
+// console.dir(DOM_elements); //есть ли отличия от console.log??
+
+let callback = function (DOM_elements) {
+    for (let i = 0; i < DOM_elements.length; i++) {
+        if (DOM_elements[i] === DOM_element) continue;
+        DOM_elements[i]
+    }
+}
+for (let i = 0; i < DOM_elements.length; i++) {
+    // let 
+    DOM_elements[i].addEventListener("mouseenter", createHendlerFun(DOM_elements[i], CSSclass,'--jsActive', false, 770));
+    DOM_elements[i].addEventListener("mouseleave", createHendlerFun(DOM_elements[i], CSSclass,'--jsActive', true,  770));  
+    DOM_elements[i].addEventListener("click",      createHendlerFun(DOM_elements[i], CSSclass,'--jsActive', "toggle", 0, 770));
 }
 
 // проверка работы функции фильтрации:
