@@ -1,6 +1,14 @@
+// отчёт о включении в консоли:
 console.log("гл. скрипт подключён");
 
-// функция для фильтрации типа данных:
+// полезные методы консоли:
+// console.log(DOM_elements);
+// console.table([['сообщение test','ещё сообщение'],['ещё2','ещё3']]);
+// console.trace();
+// console.warn("message");
+// console.dir(DOM_elements); //есть ли отличия от console.log??
+
+// функция для фильтрации типа данных:(сейчас нигде не используется)
 function TypeFilter(argArray) {
     for (let i = 0; i < argArray.length; i++) {
         if (typeof argArray[i][0] !== argArray[i][1]) {
@@ -13,63 +21,94 @@ function TypeFilter(argArray) {
         }
     }
 }
+// проверка работы функции фильтрации:
+// TypeFilter([['fghhj', 'string'],["true", 'boolean']])();
+
 
 // функция-генератор функций-обработчиков:
-function createHendlerFun(DOM_element, CSSclass, CSSclass_modifer,  revers = false, minWinWidth=0, maxWinWidth=Infinity, callback=() =>{}) {
-    if (revers === false) {
-        return function hendlerFun() {
-            if (window.innerWidth <= maxWinWidth && window.innerWidth > minWinWidth) {
-                DOM_element.classList.add(String(CSSclass) + String(CSSclass_modifer));
-                callback(DOM_element, CSSclass, CSSclass_modifer,  revers, minWinWidth, maxWinWidth);
-                // console.log('обр соб');
-                console.trace();
-            }
+function createHendlerFun(HandlerInfo,  ActionWithClassList = 'add', minWinWidth=0, maxWinWidth=Infinity, callback=() =>{}) {
+    let isNormalWindowWidth = (minWinWidth, maxWinWidth) => {
+        return window.innerWidth <= maxWinWidth &&
+        window.innerWidth > minWinWidth;
+    }
+    return function hendlerFun() {
+        if (isNormalWindowWidth(minWinWidth, maxWinWidth)) {
+            HandlerInfo.DOM_element.classList[ActionWithClassList](String(HandlerInfo.CSSclass) + String(HandlerInfo.CSSclass_modifer));
+            HandlerInfo.callback(HandlerInfo);
         }
-    } else if (revers === true) {
-        return function hendlerFun() {
-            if (window.innerWidth <= maxWinWidth && window.innerWidth > minWinWidth) {
-                DOM_element.classList.remove(String(CSSclass) + String(CSSclass_modifer));
-                callback();
-                // console.log('обр соб 2');
-                console.trace();
-            }
-        }
-    } else if (revers === 'toggle'){
-        return function hendlerFun() {
-            if (window.innerWidth <= maxWinWidth && window.innerWidth > minWinWidth) {
-                DOM_element.classList.toggle(String(CSSclass) + String(CSSclass_modifer));
-                callback();
-                // console.log('обр соб 2');
-                console.trace();
-            }
-        }
-    } else {
-        console.error(`Not right value of <revers> parametr: needed
-        "true", "false" or "toggle" - expected "` + revers + '"')
     }
 }
-// ДОМ-элемент с нужным классом:
-let CSSclass = "MainMenu__MenuItem--HoldMenuConteiner";
-let DOM_elements = document.querySelectorAll('.'+CSSclass);
 
-// console.log(DOM_elements);
-// console.table([['сообщение test','ещё сообщение'],['ещё2','ещё3']]);
-// console.trace();
-// console.warn("message");
-// console.dir(DOM_elements); //есть ли отличия от console.log??
+// -------------------------------------------------
 
-let callback = function (DOM_elements) {
+// функция для привязки "стилистических" обработчиков событий
+//    (привязаны к классам, добовляют/убирают классы с модификаторами):
+function bindDecorationHandlers(BindingClassInfo) {
+    let DOM_elements = document.querySelectorAll('.'+BindingClassInfo.CSSclass);
+    
+    // назначение обработчиков:
     for (let i = 0; i < DOM_elements.length; i++) {
-        if (DOM_elements[i] === DOM_element) continue;
-        DOM_elements[i]
+        let HandlerInfo = {
+            DOM_element: DOM_elements[i],
+            CSSclass: BindingClassInfo.CSSclass,
+            CSSclass_modifer: BindingClassInfo.CSSclass_modifer,
+            callback: BindingClassInfo.callback,
+            DOM_elements: DOM_elements,
+        }
+        
+        for (let j = 0; j < HandlerConfigArray.length; j++) {
+            DOM_elements[i].addEventListener(
+                HandlerConfigArray[j].HandingEvent, createHendlerFun(
+                    HandlerInfo, HandlerConfigArray[j].ActionWithClassList, 
+                    HandlerConfigArray[j].minWinWidth,
+                    HandlerConfigArray[j].maxWinWidth
+                )
+            );
+        }
+    }
+} 
+// ПЕРВИЧНАЯ ИНИЦИАЛИЗАЦИЯ:
+// функция со сторонними действиями помимо добавления/снятия класса, которые выполняет обработчик события
+let callbackCloser = function (HandlerInfo) {
+    console.log(HandlerInfo);
+    for (let i = 0; i < HandlerInfo.DOM_elements.length; i++) {
+        if (HandlerInfo.DOM_elements[i] === HandlerInfo.DOM_element) continue;
+        HandlerInfo.DOM_elements[i].classList.remove(String(HandlerInfo.CSSclass) + String(HandlerInfo.CSSclass_modifer));
+        // console.log(String(HandlerInfo.CSSclass) + String(HandlerInfo.CSSclass_modifer));
     }
 }
-for (let i = 0; i < DOM_elements.length; i++) {
-    // let 
-    DOM_elements[i].addEventListener("mouseenter", createHendlerFun(DOM_elements[i], CSSclass,'--jsActive', false, 770));
-    DOM_elements[i].addEventListener("mouseleave", createHendlerFun(DOM_elements[i], CSSclass,'--jsActive', true,  770));  
-    DOM_elements[i].addEventListener("click",      createHendlerFun(DOM_elements[i], CSSclass,'--jsActive', "toggle", 0, 770));
+let BindingClassInfo = {
+    CSSclass: "MainMenu__MenuItem--HoldMenuConteiner",
+    CSSclass_modifer: '--jsActive',
+    callback: callbackCloser,
 }
+let HandlerConfigArray = [
+    {
+        HandingEvent: "mouseenter",
+        ActionWithClassList: 'add',
+        minWinWidth: 770,
+        maxWinWidth: Infinity,
+    },
+    {
+        HandingEvent: "mouseleave",
+        ActionWithClassList: 'remove',
+        minWinWidth: 770,
+        maxWinWidth: Infinity,
+    },
+    {
+        HandingEvent: "click",
+        ActionWithClassList: 'toggle',
+        minWinWidth: 0,
+        maxWinWidth: 770,
+    },
+]
 
-// проверка работы функции фильтрации:
-TypeFilter([['fghhj', 'string'],["true", 'boolean']])();
+// вызовы функций для привязки "стилистических" обработчико всобытий:
+bindDecorationHandlers(BindingClassInfo, HandlerConfigArray);
+
+
+
+
+
+
+
