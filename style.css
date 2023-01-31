@@ -51,9 +51,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-y: hidden;
   font-size: 12px;
   font-weight: 700;
-  background-color: #fff; }
+  background-color: #fff;
+  transition: height 0.5s; }
+  @media screen and (max-width: 990px) {
+    .MainMenu {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      border-bottom: 1px solid #e9ecef;
+      height: 76px; }
+      .MainMenu--jsOpened {
+        height: auto; } }
   .MainMenu--Stiky {
     position: fixed;
     top: 0;
@@ -178,7 +189,7 @@ body {
       font-style: normal;
       font-weight: normal; }
   .MainMenu__ViewButton {
-    visibility: hidden;
+    display: none;
     position: absolute;
     top: 20px;
     right: 23px;
@@ -198,13 +209,7 @@ body {
       outline-width: 4px; }
     @media screen and (max-width: 990px) {
       .MainMenu__ViewButton {
-        visibility: visible; } }
-  @media screen and (max-width: 990px) {
-    .MainMenu {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      border-bottom: 1px solid #e9ecef; } }
+        display: block; } }
 
 .Navigation {
   margin-top: 50px;

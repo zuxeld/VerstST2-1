@@ -107,11 +107,24 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-y: hidden;
 
   font-size: 12px;
   font-weight: 700;
   background-color: $color_2;
+  transition: height 0.5s;
 
+  @media screen and (max-width: 990px){
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 10px;
+
+    border-bottom: 1px solid $color_6;
+    height: 76px;
+    &--jsOpened {
+      height: auto;
+    }
+  }
   // модиф. "скользящего" состояния:
   &--Stiky {
     position: fixed;
@@ -122,7 +135,6 @@ body {
 
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
-
   // блок с меню:
   &__MenuItems {
     display: flex;
@@ -304,7 +316,7 @@ body {
 
   // кнопка показа меню:
   &__ViewButton {
-    visibility: hidden;
+    display: none;
     position: absolute;
     top: 20px;
     right: 23px;
@@ -325,16 +337,8 @@ body {
       outline-width: 4px;
     }
     @media screen and (max-width: 990px){
-      visibility: visible;
+      display: block;
     }
-  }
-
-  @media screen and (max-width: 990px){
-    flex-direction: column;
-    align-items:flex-start;
-    gap: 10px;
-
-    border-bottom: 1px solid $color_6;
   }
 }
 
