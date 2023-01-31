@@ -26,20 +26,27 @@ function TypeFilter(argArray) {
 
 
 // функция-генератор функций-обработчиков:
-function createHendlerFun(HandlerInfo,  ActionWithClassList = 'add', minWinWidth=0, maxWinWidth=Infinity, callback=() =>{}) {
-    let isNormalWindowWidth = (minWinWidth, maxWinWidth) => {
-        return window.innerWidth <= maxWinWidth &&
-        window.innerWidth > minWinWidth;
-    }
-    return function hendlerFun() {
-        if (isNormalWindowWidth(minWinWidth, maxWinWidth)) {
-            HandlerInfo.DOM_element.classList[ActionWithClassList](String(HandlerInfo.CSSclass) + String(HandlerInfo.CSSclass_modifer));
-            HandlerInfo.callback(HandlerInfo);
+function createHendlerFun(
+    HandlerInfo,  ActionWithClassList = 'add',
+    minWinWidth=0, maxWinWidth=Infinity, callback=() =>{}
+    ) {
+        let isNormalWindowWidth = (minWinWidth, maxWinWidth) => {
+            return window.innerWidth <= maxWinWidth &&
+            window.innerWidth > minWinWidth;
         }
-    }
+        return function hendlerFun() {
+            if (isNormalWindowWidth(minWinWidth, maxWinWidth)) {
+                let TargetCSSclass = 
+                    String(HandlerInfo.CSSclass) +
+                    String(HandlerInfo.CSSclass_modifer);
+                HandlerInfo.DOM_element.classList[ActionWithClassList](TargetCSSclass);
+                HandlerInfo.callback(HandlerInfo);
+            }
+        }
 }
 
-// -------------------------------------------------
+// -------------------------------------------------//
+
 
 // функция для привязки "стилистических" обработчиков событий
 //    (привязаны к классам, добовляют/убирают классы с модификаторами):
@@ -68,15 +75,19 @@ function bindDecorationHandlers(BindingClassInfo) {
     }
 } 
 // ПЕРВИЧНАЯ ИНИЦИАЛИЗАЦИЯ:
+
 // функция со сторонними действиями помимо добавления/снятия класса, которые выполняет обработчик события
+// (данная версия убирает целевые классы с остальных таких же элементов)
 let callbackCloser = function (HandlerInfo) {
-    console.log(HandlerInfo);
     for (let i = 0; i < HandlerInfo.DOM_elements.length; i++) {
         if (HandlerInfo.DOM_elements[i] === HandlerInfo.DOM_element) continue;
-        HandlerInfo.DOM_elements[i].classList.remove(String(HandlerInfo.CSSclass) + String(HandlerInfo.CSSclass_modifer));
-        // console.log(String(HandlerInfo.CSSclass) + String(HandlerInfo.CSSclass_modifer));
+        let TargetCSSclass = String(HandlerInfo.CSSclass) + 
+                             String(HandlerInfo.CSSclass_modifer);
+        HandlerInfo.DOM_elements[i].classList.remove(TargetCSSclass);
     }
 }
+
+// выпадающие менюшки элементов меню:
 let BindingClassInfo = {
     CSSclass: "MainMenu__MenuItem--HoldMenuConteiner",
     CSSclass_modifer: '--jsActive',
@@ -103,12 +114,26 @@ let HandlerConfigArray = [
     },
 ]
 
-// вызовы функций для привязки "стилистических" обработчико всобытий:
+// (вызов функции для привязки "стилистических" обработчиков событий):
 bindDecorationHandlers(BindingClassInfo, HandlerConfigArray);
 
 
+// выпадение/сворачивание всего меню по нажатию кнопки (в реж. планшета/тел.):
+BindingClassInfo = {
+    TrigerCSSclass: "MainMenu__ViewButton",
+    CSSclass: "MainMenu",
+    CSSclass_modifer: '--jsOpened',
+}
+HandlerConfigArray = [
+    {
+        HandingEvent: "click",
+        ActionWithClassList: 'toggle',
+        minWinWidth: 0,
+        maxWinWidth: 990,
+    },
+]
 
-
+bindDecorationHandlers(BindingClassInfo, HandlerConfigArray);
 
 
 
