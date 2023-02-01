@@ -144,11 +144,6 @@ BindingClassInfo = {
     TrigerCSSclass: "MainMenu__ViewButton",
     CSSclass: "MainMenu",
     CSSclass_modifer: '--jsOpened',
-    // 
-    // ControlMap: new Map([
-    //     [0,[0,]],
-    //     [1,[1,]],
-    // ]),
 }
 HandlerConfigArray = [
     {
