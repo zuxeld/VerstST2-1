@@ -1,6 +1,8 @@
 // отчёт о включении в консоли:
 console.log("гл. скрипт подключён");
 
+// ЧЕРНОВОЙ БЛОК:
+
 // полезные методы консоли:
 // console.log(DOM_elements);
 // console.table([['сообщение test','ещё сообщение'],['ещё2','ещё3']]);
@@ -24,10 +26,12 @@ function TypeFilter(argArray) {
 // проверка работы функции фильтрации:
 // TypeFilter([['fghhj', 'string'],["true", 'boolean']])();
 
+// --------------------------------------------------------------//
+//  КЛЮЧЕВЫЕ ФУНКЦИИ:
 
 // функция-генератор функций-обработчиков:
 function createHendlerFun(
-    HandlerInfo,  ActionWithClassList = 'add',
+    HandlerInfo,  ActionWithClassList = 'toggle',
     minWinWidth=0, maxWinWidth=Infinity, callback=() =>{}
     ) {
         let isNormalWindowWidth = (minWinWidth, maxWinWidth) => {
@@ -45,35 +49,52 @@ function createHendlerFun(
         }
 }
 
-// -------------------------------------------------//
+// --------------------------------------------------------------//
 
 
 // функция для привязки "стилистических" обработчиков событий
 //    (привязаны к классам, добовляют/убирают классы с модификаторами):
-function bindDecorationHandlers(BindingClassInfo) {
-    let DOM_elements = document.querySelectorAll('.'+BindingClassInfo.CSSclass);
+function bindDecorationHandlers(BindingClassInfo, HandlerConfigArray) {
+    // назначение значений по умолчанию:
+    if (BindingClassInfo.TrigerCSSclass === undefined) {
+        BindingClassInfo.TrigerCSSclass = BindingClassInfo.CSSclass;
+    }
+    if (BindingClassInfo.ControlGraphFun === undefined) {
+        BindingClassInfo.ControlGraphFun =
+            (TrigerDOM_elementNomber) => TrigerDOM_elementNomber;
+    }
+
+    let TrigerDOM_elements = document.querySelectorAll('.' + BindingClassInfo.TrigerCSSclass);
+    let DOM_elements = document.querySelectorAll('.' + BindingClassInfo.CSSclass);    
     
     // назначение обработчиков:
-    for (let i = 0; i < DOM_elements.length; i++) {
-        let HandlerInfo = {
-            DOM_element: DOM_elements[i],
-            CSSclass: BindingClassInfo.CSSclass,
-            CSSclass_modifer: BindingClassInfo.CSSclass_modifer,
-            callback: BindingClassInfo.callback,
-            DOM_elements: DOM_elements,
-        }
+    for (let k = 0; k < TrigerDOM_elements.length; k++) {
         
-        for (let j = 0; j < HandlerConfigArray.length; j++) {
-            DOM_elements[i].addEventListener(
-                HandlerConfigArray[j].HandingEvent, createHendlerFun(
-                    HandlerInfo, HandlerConfigArray[j].ActionWithClassList, 
-                    HandlerConfigArray[j].minWinWidth,
-                    HandlerConfigArray[j].maxWinWidth
-                )
-            );
+        for (let i = 0; i < DOM_elements.length; i++) {
+            if (i !== BindingClassInfo.ControlGraphFun(k)) continue;
+            let HandlerInfo = {
+                DOM_element: DOM_elements[i],
+                CSSclass: BindingClassInfo.CSSclass,
+                CSSclass_modifer: BindingClassInfo.CSSclass_modifer,
+                callback: BindingClassInfo.callback,
+                DOM_elements: DOM_elements,
+            }
+            
+            for (let j = 0; j < HandlerConfigArray.length; j++) {
+                TrigerDOM_elements[k].addEventListener(
+                    HandlerConfigArray[j].HandingEvent, createHendlerFun(
+                        HandlerInfo, HandlerConfigArray[j].ActionWithClassList, 
+                        HandlerConfigArray[j].minWinWidth,
+                        HandlerConfigArray[j].maxWinWidth
+                    )
+                );
+            }
         }
     }
 } 
+
+// --------------------------------------------------------------//
+
 // ПЕРВИЧНАЯ ИНИЦИАЛИЗАЦИЯ:
 
 // функция со сторонними действиями помимо добавления/снятия класса, которые выполняет обработчик события
@@ -123,6 +144,11 @@ BindingClassInfo = {
     TrigerCSSclass: "MainMenu__ViewButton",
     CSSclass: "MainMenu",
     CSSclass_modifer: '--jsOpened',
+    // 
+    // ControlMap: new Map([
+    //     [0,[0,]],
+    //     [1,[1,]],
+    // ]),
 }
 HandlerConfigArray = [
     {
