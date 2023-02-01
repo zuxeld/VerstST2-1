@@ -51,7 +51,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow-y: hidden;
   font-size: 12px;
   font-weight: 700;
   background-color: #fff;
@@ -62,6 +61,7 @@ body {
       align-items: flex-start;
       gap: 10px;
       border-bottom: 1px solid #e9ecef;
+      overflow-y: hidden;
       height: 76px; }
       .MainMenu--jsOpened {
         height: auto; } }
