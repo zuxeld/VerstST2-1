@@ -54,7 +54,7 @@ body {
   font-size: 12px;
   font-weight: 700;
   background-color: #fff;
-  transition: height 0.5s; }
+  transition: top 0.5s; }
   @media screen and (max-width: 990px) {
     .MainMenu {
       flex-direction: column;
@@ -62,15 +62,22 @@ body {
       gap: 10px;
       border-bottom: 1px solid #e9ecef;
       overflow-y: hidden;
+      transition: height 0.5s;
       height: 76px; }
       .MainMenu--jsOpened {
-        height: auto; } }
+        height: 335px; } }
+@keyframes menuMove {
+  from {
+    top: -76px; }
+  to {
+    top: 0px; } }
   .MainMenu--jsStiky {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10000;
+    animation: menuMove 0.3s;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
   .MainMenu__MenuItems {
     display: flex;

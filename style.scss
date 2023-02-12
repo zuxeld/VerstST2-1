@@ -111,7 +111,6 @@ body {
   font-size: 12px;
   font-weight: 700;
   background-color: $color_2;
-  transition: height 0.5s;
 
   @media screen and (max-width: 990px){
     flex-direction: column;
@@ -120,11 +119,19 @@ body {
 
     border-bottom: 1px solid $color_6;
     overflow-y: hidden;
+    transition: height 0.5s;
     height: 76px;
     &--jsOpened {
-      height: auto;
+      height: 335px;
     }
   }
+
+  transition: top 0.5s;
+  @keyframes menuMove {
+    from {top: -76px;}
+    to {top: 0px;}
+  }
+  
   // модиф. "скользящего" состояния:
   &--jsStiky {
     position: fixed;
@@ -132,6 +139,8 @@ body {
     left: 0;
     right: 0;
     z-index: 10000;
+
+    animation: menuMove 0.3s;
 
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }

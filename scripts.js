@@ -10,175 +10,37 @@ console.log("гл. скрипт подключён");
 // console.warn("message");
 // console.dir(DOM_elements); //есть ли отличия от console.log??
 
-// функция для фильтрации типа данных:(сейчас нигде не используется)
-function TypeFilter(argArray) {
-    for (let i = 0; i < argArray.length; i++) {
-        if (typeof argArray[i][0] !== argArray[i][1]) {
-            // let errObj = TypeError;
-            // errObj.message = 'Custom type filtration failed!';
-            return function () {
-                console.error(`Custom type filtration failed:
-                Type is not <` + String(argArray[i][1]) + '>');
-            } 
-        }
-    }
-}
-// проверка работы функции фильтрации:
-// TypeFilter([['fghhj', 'string'],["true", 'boolean']])();
-
-// --------------------------------------------------------------//
-//  КЛЮЧЕВЫЕ ФУНКЦИИ:
-
-// функция-генератор функций-обработчиков:
-function createHendlerFun(
-    HandlerInfo,  ActionWithClassList = 'toggle',
-    minWinWidth=0, maxWinWidth=Infinity, callback=() =>{}
-    ) {
-        let isNormalWindowWidth = (minWinWidth, maxWinWidth) => {
-            return window.innerWidth <= maxWinWidth &&
-            window.innerWidth > minWinWidth;
-        }
-        return function hendlerFun() {
-            if (isNormalWindowWidth(minWinWidth, maxWinWidth)) {
-                let TargetCSSclass = 
-                    String(HandlerInfo.CSSclass) +
-                    String(HandlerInfo.CSSclass_modifer);
-                HandlerInfo.DOM_element.classList[ActionWithClassList](TargetCSSclass);
-                HandlerInfo.callback(HandlerInfo);
-            }
-        }
-}
-
-// --------------------------------------------------------------//
-
-
-// функция для привязки "стилистических" обработчиков событий
-//    (привязаны к классам, добовляют/убирают классы с модификаторами):
-function bindDecorationHandlers(BindingClassInfo, HandlerConfigArray) {
-    // назначение значений по умолчанию:
-    if (BindingClassInfo.TrigerCSSclass === undefined) {
-        BindingClassInfo.TrigerCSSclass = BindingClassInfo.CSSclass;
-    }
-    if (BindingClassInfo.ControlGraphFun === undefined) {
-        BindingClassInfo.ControlGraphFun =
-            (TrigerDOM_elementNomber) => TrigerDOM_elementNomber;
-    }
-
-    let TrigerDOM_elements = document.querySelectorAll('.' + BindingClassInfo.TrigerCSSclass);
-    let DOM_elements = document.querySelectorAll('.' + BindingClassInfo.CSSclass);    
-    
-    // назначение обработчиков:
-    for (let k = 0; k < TrigerDOM_elements.length; k++) {
-        
-        for (let i = 0; i < DOM_elements.length; i++) {
-            if (i !== BindingClassInfo.ControlGraphFun(k)) continue;
-            let HandlerInfo = {
-                DOM_element: DOM_elements[i],
-                CSSclass: BindingClassInfo.CSSclass,
-                CSSclass_modifer: BindingClassInfo.CSSclass_modifer,
-                callback: BindingClassInfo.callback,
-                DOM_elements: DOM_elements,
-            }
-            
-            for (let j = 0; j < HandlerConfigArray.length; j++) {
-                TrigerDOM_elements[k].addEventListener(
-                    HandlerConfigArray[j].HandingEvent, createHendlerFun(
-                        HandlerInfo, HandlerConfigArray[j].ActionWithClassList, 
-                        HandlerConfigArray[j].minWinWidth,
-                        HandlerConfigArray[j].maxWinWidth
-                    )
-                );
-            }
-        }
-    }
-} 
 
 // --------------------------------------------------------------//
 
 // ФУНКЦИОНАЛЬНЫЙ КОД:
 
-// функция со сторонними действиями помимо добавления/снятия класса, которые выполняет обработчик события
-// (данная версия убирает целевые классы с остальных таких же элементов)
-let callbackCloser = function (HandlerInfo) {
-    for (let i = 0; i < HandlerInfo.DOM_elements.length; i++) {
-        if (HandlerInfo.DOM_elements[i] === HandlerInfo.DOM_element) continue;
-        let TargetCSSclass = String(HandlerInfo.CSSclass) + 
-                             String(HandlerInfo.CSSclass_modifer);
-        HandlerInfo.DOM_elements[i].classList.remove(TargetCSSclass);
-    }
+// БЛОК MainMenu:
+// 1)выпадение/сворачивание всего меню по нажатию кнопки (в реж. планшета/тел.):
+let blockElement = document.querySelector('.MainMenu');
+blockElement.addEventListener('click', function (event) {
+    if (!event.target.classList.contains('MainMenu__ViewButton')) return;
+    this.classList.toggle("MainMenu--jsOpened");
+});
+
+// 2)начало/завершение "скольжения" блока меню при прокрутке страницы:
+{
+    let lastPageYOffset = 0;
+    let blockElement = document.querySelector('.MainMenu');
+    document.addEventListener('scroll', function (event) {
+        let trigerHight = 190;
+        if (window.pageYOffset > trigerHight &&
+            lastPageYOffset < trigerHight) {
+                blockElement.classList.add("MainMenu--jsStiky");
+                lastPageYOffset = window.pageYOffset;
+        } else if (window.pageYOffset < trigerHight &&
+            lastPageYOffset > trigerHight){
+                blockElement.classList.remove("MainMenu--jsStiky");
+                lastPageYOffset = window.pageYOffset;
+        }
+    });
 }
 
-// выпадающие менюшки элементов меню:
-let BindingClassInfo = {
-    CSSclass: "MainMenu__MenuItem--HoldMenuConteiner",
-    CSSclass_modifer: '--jsActive',
-    callback: callbackCloser,
-}
-let HandlerConfigArray = [
-    {
-        HandingEvent: "mouseenter",
-        ActionWithClassList: 'add',
-        minWinWidth: 770,
-        maxWinWidth: Infinity,
-    },
-    {
-        HandingEvent: "mouseleave",
-        ActionWithClassList: 'remove',
-        minWinWidth: 770,
-        maxWinWidth: Infinity,
-    },
-    {
-        HandingEvent: "click",
-        ActionWithClassList: 'toggle',
-        minWinWidth: 0,
-        maxWinWidth: 770,
-    },
-]
 
-// (вызов функции для привязки "стилистических" обработчиков событий):
-bindDecorationHandlers(BindingClassInfo, HandlerConfigArray);
-
-
-// выпадение/сворачивание всего меню по нажатию кнопки (в реж. планшета/тел.):
-BindingClassInfo = {
-    TrigerCSSclass: "MainMenu__ViewButton",
-    CSSclass: "MainMenu",
-    CSSclass_modifer: '--jsOpened',
-}
-HandlerConfigArray = [
-    {
-        HandingEvent: "click",
-        ActionWithClassList: 'toggle',
-        minWinWidth: 0,
-        maxWinWidth: 990,
-    },
-]
-
-bindDecorationHandlers(BindingClassInfo, HandlerConfigArray);
-
-// (не готово)начало/завершение "скольжения" блока меню при прокрутке страницы:
-// BindingClassInfo = {
-//     TrigerCSSclass: "body",
-//     CSSclass: "MainMenu",
-//     CSSclass_modifer: '--jsStiky',
-// }
-// HandlerConfigArray = [
-//     {
-//         HandingEvent: "scroll",
-//         ActionWithClassList: 'add',
-//     },
-//     {
-//         HandingEvent: "scroll",
-//         ActionWithClassList: 'remove',
-//     },
-// ]
-
-// bindDecorationHandlers(BindingClassInfo, HandlerConfigArray);
-
-window.onscroll = function() {
-  if (document.documentElement.scrollTop > 50) {
-    document.getElementById("myP").className = "test";
-  } else {
-    document.getElementById("myP").className = "";
-  }
-}
+// БЛОК ProductFotoGalary:
+// 
