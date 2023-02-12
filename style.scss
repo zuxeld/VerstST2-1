@@ -170,22 +170,25 @@ body {
         // top: 3px;
         display: inline-block;
       }
-      // --jsActive
-      &--jsActive .MainMenu__HoldedMenuItems {
+      &:hover [class*="_HoldedMenuItems"]{
         display: block;
-        // visibility: visible;
-        // @media screen and (max-width: 990px){
-        //   display: none;
-        // }
       }
-      &--jsActive > a {
-        // color: $color_3;
-        pointer-events: stroke;
+      // --jsActive
+      // &--jsActive .MainMenu__HoldedMenuItems {
+      //   display: block;
+      //   // visibility: visible;
+      //   // @media screen and (max-width: 990px){
+      //   //   display: none;
+      //   // }
+      // }
+      // &--jsActive > a {
+      //   // color: $color_3;
+      //   pointer-events: stroke;
         
-        // @media screen and (max-width: 990px){
-        //   display: none;
-        // }
-      }
+      //   // @media screen and (max-width: 990px){
+      //   //   display: none;
+      //   // }
+      // }
     }
     // - для указания числа статей (в блоге)
     &--NumberOfStates {

@@ -97,10 +97,8 @@ body {
         font-size: 80%;
         position: relative;
         display: inline-block; }
-      .MainMenu__MenuItem--HoldMenuConteiner--jsActive .MainMenu__HoldedMenuItems {
+      .MainMenu__MenuItem--HoldMenuConteiner:hover [class*="_HoldedMenuItems"] {
         display: block; }
-      .MainMenu__MenuItem--HoldMenuConteiner--jsActive > a {
-        pointer-events: stroke; }
     .MainMenu__MenuItem--NumberOfStates::after {
       content: "3";
       display: inline-block;
