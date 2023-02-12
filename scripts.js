@@ -95,7 +95,7 @@ function bindDecorationHandlers(BindingClassInfo, HandlerConfigArray) {
 
 // --------------------------------------------------------------//
 
-// ПЕРВИЧНАЯ ИНИЦИАЛИЗАЦИЯ:
+// ФУНКЦИОНАЛЬНЫЙ КОД:
 
 // функция со сторонними действиями помимо добавления/снятия класса, которые выполняет обработчик события
 // (данная версия убирает целевые классы с остальных таких же элементов)
@@ -156,5 +156,29 @@ HandlerConfigArray = [
 
 bindDecorationHandlers(BindingClassInfo, HandlerConfigArray);
 
+// (не готово)начало/завершение "скольжения" блока меню при прокрутке страницы:
+// BindingClassInfo = {
+//     TrigerCSSclass: "body",
+//     CSSclass: "MainMenu",
+//     CSSclass_modifer: '--jsStiky',
+// }
+// HandlerConfigArray = [
+//     {
+//         HandingEvent: "scroll",
+//         ActionWithClassList: 'add',
+//     },
+//     {
+//         HandingEvent: "scroll",
+//         ActionWithClassList: 'remove',
+//     },
+// ]
 
+// bindDecorationHandlers(BindingClassInfo, HandlerConfigArray);
 
+window.onscroll = function() {
+  if (document.documentElement.scrollTop > 50) {
+    document.getElementById("myP").className = "test";
+  } else {
+    document.getElementById("myP").className = "";
+  }
+}

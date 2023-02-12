@@ -65,7 +65,7 @@ body {
       height: 76px; }
       .MainMenu--jsOpened {
         height: auto; } }
-  .MainMenu--Stiky {
+  .MainMenu--jsStiky {
     position: fixed;
     top: 0;
     left: 0;

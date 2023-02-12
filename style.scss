@@ -107,7 +107,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   font-size: 12px;
   font-weight: 700;
   background-color: $color_2;
@@ -126,7 +126,7 @@ body {
     }
   }
   // модиф. "скользящего" состояния:
-  &--Stiky {
+  &--jsStiky {
     position: fixed;
     top: 0;
     left: 0;
