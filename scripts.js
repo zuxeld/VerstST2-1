@@ -42,5 +42,48 @@ blockElement.addEventListener('click', function (event) {
 }
 
 
-// БЛОК ProductFotoGalary:
-// 
+// БЛОК ProductFotoGalary:(слайдер продукта)
+// отменяю стандартоное поведение при событии drag на фотографиях слайдера:
+let imgElements = document.querySelectorAll(
+    `[class*="_FotoChoiserItem"], [class*="_GalaryScreen"],
+    [class*="_GalaryScreenItem"]`
+    );
+console.log(imgElements);
+imgElements.forEach(imgElement => {
+    imgElement.ondragstart = function() {
+        return false;
+    };
+});
+
+blockElement = document.querySelector('.ProductFotoGalary');
+{
+    let isMouseDown = false;
+    let lastclientX = 0;
+    let lastX = 0;
+    function isInNeededElem(targetElement) {
+        return targetElement.classList.contains('ProductFotoGalary__GalaryScreenMovedConteiner');
+    }
+    blockElement.addEventListener('mousedown', function (event) {
+        if (isInNeededElem(event.target)) {
+            isMouseDown = true;
+            lastclientX = event.clientX;
+            lastX = event.target.getBoundingClientRect().x;
+            console.log(lastX);
+        };
+    });
+    blockElement.addEventListener('mouseup', function (event) {
+        if (isInNeededElem(event.target)) {
+            isMouseDown = false;
+        };
+    });
+    blockElement.addEventListener('mousemove', function (event) {
+        if (isInNeededElem(event.target) &&
+            isMouseDown === true) {
+                event.target.style.left = (lastX - (lastclientX - event.clientX)) + 'px';
+                // event.target.getBoundingClientRect().x = lastX - (lastclientX - event.clientX);
+                // event.target.parentElement.getBoundingClientRect().x = lastclientX - event.clientX;
+                // console.log(event.target.firstChild.offsetLeft);
+        };
+    });
+
+}

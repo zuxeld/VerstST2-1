@@ -262,33 +262,27 @@ body {
     object-fit: contain;
     padding: 10px;
     border: 1px solid #e9ecef;
-    border-radius: 8px; }
+    border-radius: 8px;
+    user-select: none; }
   .ProductFotoGalary__GalaryScreen {
     position: relative;
     max-width: 100%;
-    object-fit: contain;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: flex;
-    gap: 10px;
-    scroll-snap-type: x mandatory;
-    -ms-overflow-style: none;
-    /* IE и Edge */
-    scrollbar-width: none;
-    /* Firefox */ }
-    .ProductFotoGalary__GalaryScreen::-webkit-scrollbar {
-      /* Chrome, Safari и Opera */
-      width: 0; }
+    overflow: hidden; }
     @media screen and (max-width: 990px) {
       .ProductFotoGalary__GalaryScreen {
         max-height: 370px; } }
+  .ProductFotoGalary__GalaryScreenMovedConteiner {
+    position: relative;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    gap: 10px; }
   .ProductFotoGalary__GalaryScreenItem {
     object-fit: contain;
     max-width: 100%;
     max-height: calc(100% + 30px);
     padding: 50px;
-    scroll-snap-align: none center;
-    scroll-snap-stop: always;
     pointer-events: none;
     user-select: none;
     border: 1px solid #e9ecef;

@@ -401,6 +401,8 @@ body {
   display: flex;
   gap: 20px;
 
+  // user-select: none;
+
   // панель выбора фото:
   &__FotoChoiser {
     display: flex;
@@ -417,28 +419,38 @@ body {
 
     border: 1px solid $color_6;
     border-radius: 8px;
+    user-select: none;
   }
   // сам экран галереи:
   &__GalaryScreen {
     position: relative;
     max-width: 100%;
-    object-fit: contain;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: flex;
-    gap: 10px;
-    scroll-snap-type: x mandatory;
+    // object-fit: contain;
+    overflow: hidden;
+    // display: flex;
+    // gap: 10px;
+    // scroll-snap-type: x mandatory;
     // !!! плохо поддерживается !!!!
-    &::-webkit-scrollbar {
-      /* Chrome, Safari и Opera */
-      width: 0;
-    }
-    -ms-overflow-style: none; /* IE и Edge */
-    scrollbar-width: none; /* Firefox */
+    // &::-webkit-scrollbar {
+    //   /* Chrome, Safari и Opera */
+    //   width: 0;
+    // }
+    // -ms-overflow-style: none; /* IE и Edge */
+    // scrollbar-width: none; /* Firefox */
 
     @media screen and (max-width: 990px){
       max-height: 370px;
     }
+  }
+  &__GalaryScreenMovedConteiner {
+    position: relative;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    gap: 10px;
+
+    // left: -100px;
   }
   &__GalaryScreenItem {
     // width: 100%;
@@ -447,8 +459,8 @@ body {
     // max-height: 500px;
     max-height: calc(100% + 30px);
     padding: 50px;
-    scroll-snap-align: none center;
-    scroll-snap-stop: always;
+    // scroll-snap-align: none center;
+    // scroll-snap-stop: always;
     pointer-events: none;
     user-select: none;
 
