@@ -420,30 +420,21 @@ body {
     border: 1px solid $color_6;
     border-radius: 8px;
     user-select: none;
+    &.Active {
+      border-color: $color_3;
+    }
   }
   // сам экран галереи:
   &__GalaryScreen {
     position: relative;
     max-width: 100%;
-    // object-fit: contain;
     overflow: hidden;
-    // display: flex;
-    // gap: 10px;
-    // scroll-snap-type: x mandatory;
-    // !!! плохо поддерживается !!!!
-    // &::-webkit-scrollbar {
-    //   /* Chrome, Safari и Opera */
-    //   width: 0;
-    // }
-    // -ms-overflow-style: none; /* IE и Edge */
-    // scrollbar-width: none; /* Firefox */
-
     @media screen and (max-width: 990px){
       max-height: 370px;
     }
   }
   &__GalaryScreenMovedConteiner {
-    position: relative;
+    // position: relative;
     object-fit: contain;
     max-width: 100%;
     max-height: 100%;
@@ -453,6 +444,8 @@ body {
     // left: -100px;
   }
   &__GalaryScreenItem {
+    position: relative;
+    z-index: 10;
     // width: 100%;
     object-fit: contain;
     max-width: 100%;
@@ -461,7 +454,7 @@ body {
     padding: 50px;
     // scroll-snap-align: none center;
     // scroll-snap-stop: always;
-    pointer-events: none;
+    // pointer-events: none;
     user-select: none;
 
     border: 1px solid $color_6;
