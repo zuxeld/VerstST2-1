@@ -51,11 +51,11 @@ class Slider {
     isMouseDown = false;
     lastclientX = 0;
     currentItem = 0;
-    imgWidth = 200;
-    gap = 20;
+    imgWidth;
+    gap = 10;
     mouseXchange = 0;
+    setTimeoutLabel;
     constructor({movedImgConteinerClass, fotoChoiserClass}) {
-        // console.log(movedImgConteinerClass);
         this.movedImgConteinerClass = movedImgConteinerClass;
         this.fotoChoiserClass = fotoChoiserClass;
         this.movedImgConteiner = document.querySelector('.' + movedImgConteinerClass);
@@ -67,7 +67,7 @@ class Slider {
         this.movedImgConteiner.ondragstart = () => false;
         
         // вычисление ширины картинки в слайдере(первичное):
-        this.imgWidth = this.movedImgConteiner.querySelector('img').clientWidth;
+        this.imgWidth = this.movedImgConteiner.querySelector('img').offsetWidth;
 
         document.addEventListener('mousedown', this.onMouseDown.bind(this));
         document.addEventListener('mouseup', this.onMouseUp.bind(this));
@@ -77,17 +77,12 @@ class Slider {
 
     }
     onMouseDown(event) {
-        // console.log(event.target.parentElement.classList.contains(this.movedImgConteinerClass));
         if (!(event.target.tagName == 'IMG' &&
         event.target.parentElement.classList.contains(this.movedImgConteinerClass))) return;
         this.isMouseDown = true;
         this.lastclientX = event.clientX;
-        // lastX = event.target.getBoundingClientRect().x;
-        // lastX = parseInt(event.target.style.left);//вместо left нужно transform
-        // console.log(+event.target.dataset.itemnum);
         this.currentItem = +event.target.dataset.itemnum;
-        this.imgWidth = event.target.clientWidth;
-        // console.log(event.target.clientWidth);
+        this.imgWidth = event.target.offsetWidth;
     }
     onMouseUp(event) {
         if (!this.isMouseDown === true) return;
@@ -95,17 +90,14 @@ class Slider {
         let side = this.mouseXchange > 0 ? 1 : -1;
         let isCorrectChange = (this.currentItem + side >= 0 &&
             this.currentItem + side <= this.movedImgConteiner.children.length - 1);
-        // console.log(isCorrectChange);
         if ((Math.abs(this.mouseXchange) > this.imgWidth/2) && isCorrectChange) {
             this.currentItem += side;
         }
-        // console.log(this.currentItem);
         this.move(this.currentItem);
     }
     onMouseMove(event) {
         if (!this.isMouseDown === true) return;
         this.mouseXchange = this.lastclientX - event.clientX;
-        // console.log(this.mouseXchange);
         let isMovingOut = ((this.currentItem <= 0) && this.mouseXchange < 0) ||
         (this.currentItem >= this.movedImgConteiner.children.length - 1);
         let koef = isMovingOut ? 0.4 : 1;
@@ -117,10 +109,10 @@ class Slider {
             console.error('invalid <index> parametr: ' + index);
         }
         let xPosition = index*(this.imgWidth + this.gap);
-        console.log(this.imgWidth);
         this.movedImgConteiner.style.transition = '0.5s';
+        clearTimeout(this.setTimeoutLabel);
         this.movedImgConteiner.style.transform = `translateX(-${xPosition}px)`;
-        setTimeout(()=>this.movedImgConteiner.style.transition = 'none',600);
+        this.setTimeoutLabel = setTimeout(()=>this.movedImgConteiner.style.transition = 'none',600);
         this.fotoChoiser.querySelectorAll('img').forEach((img) => img.classList.remove('Active'))
         this.fotoChoiser.querySelector(`[data-itemnum="${index}"]`).classList.add('Active');
     }
@@ -131,46 +123,8 @@ class Slider {
         this.move(this.currentItem);
     }
 }
+
 new Slider({
     movedImgConteinerClass: 'ProductFotoGalary__GalaryScreenMovedConteiner',
     fotoChoiserClass: 'ProductFotoGalary__FotoChoiser'
 });
-// // отменяю стандартоное поведение при событии drag на фотографиях слайдера:
-// blockElement.querySelectorAll('img').forEach(imgElement => {
-//         imgElement.ondragstart = () => false;
-// });
-// console.log(blockElement.querySelectorAll('img'));
-
-{
-    // let isMouseDown = false;
-    // let lastclientX = 0;
-    // let lastX = 0;
-    // function isInNeededElem(targetElement) {
-    //     return targetElement.classList.contains(movedImgConteinerClass);
-    // }
-    // blockElement.addEventListener('mousedown', function (event) {
-    //     if (isInNeededElem(event.target)) {
-    //         isMouseDown = true;
-    //         lastclientX = event.clientX;
-    //         // lastX = event.target.getBoundingClientRect().x;
-    //         lastX = parseInt(event.target.style.left);//вместо left нужно transform
-    //         console.log(event.target.style.left);
-    //     };
-    // });
-    // blockElement.addEventListener('mouseup', function (event) {
-    //     if (isInNeededElem(event.target) &&
-    //         isMouseDown === true) {
-    //         isMouseDown = false;
-    //     };
-    // });
-    // blockElement.addEventListener('mousemove', function (event) {
-    //     if (isInNeededElem(event.target) &&
-    //         isMouseDown === true) {
-    //             event.target.style.left = (lastX - (lastclientX - event.clientX)) + 'px';
-    //             // event.target.getBoundingClientRect().x = lastX - (lastclientX - event.clientX);
-    //             // event.target.parentElement.getBoundingClientRect().x = lastclientX - event.clientX;
-    //             // console.log(event.target.firstChild.offsetLeft);
-    //     };
-    // });
-
-}

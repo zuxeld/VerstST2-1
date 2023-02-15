@@ -280,8 +280,6 @@ body {
     display: flex;
     gap: 10px; }
   .ProductFotoGalary__GalaryScreenItem {
-    position: relative;
-    z-index: 10;
     object-fit: contain;
     max-width: 100%;
     max-height: calc(100% + 30px);
