@@ -249,7 +249,8 @@ body {
 
 .ProductFotoGalary {
   display: flex;
-  gap: 20px; }
+  gap: 20px;
+  max-width: 80%; }
   .ProductFotoGalary__FotoChoiser {
     display: flex;
     flex-direction: column;
@@ -268,12 +269,13 @@ body {
       border-color: #157efb; }
   .ProductFotoGalary__GalaryScreen {
     position: relative;
-    max-width: 100%;
+    max-width: 99%;
     overflow: hidden; }
     @media screen and (max-width: 990px) {
       .ProductFotoGalary__GalaryScreen {
         max-height: 370px; } }
   .ProductFotoGalary__GalaryScreenMovedConteiner {
+    position: relative;
     object-fit: contain;
     max-width: 100%;
     max-height: 100%;
@@ -291,112 +293,123 @@ body {
       .ProductFotoGalary__GalaryScreenItem {
         max-height: unset; } }
 
-.ProductInfoAndBuy__LongInfo {
-  margin-top: 25px;
-  font-size: 14px;
-  line-height: 21px;
-  border-bottom: 1px solid #e9ecef;
-  padding-bottom: 20px; }
-  .ProductInfoAndBuy__LongInfo ul {
-    margin-top: 15px;
-    list-style-type: none; }
-    .ProductInfoAndBuy__LongInfo ul li:not(:last-child) {
-      margin-bottom: 5px; }
-.ProductInfoAndBuy__BuingForm {
-  margin-top: 25px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid #e9ecef; }
-.ProductInfoAndBuy__SelectColor {
-  display: flex;
-  gap: 25px;
-  font-size: 14px;
-  font-weight: 700; }
-  .ProductInfoAndBuy__SelectColor input {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 51%; }
-  .ProductInfoAndBuy__SelectColor input:checked::before {
-    outline: 1px solid #157efb;
-    outline-offset: 3px; }
-  .ProductInfoAndBuy__SelectColor input::before {
-    content: "";
+.ProductInfoAndBuy {
+  max-width: 200; }
+  .ProductInfoAndBuy__LongInfo {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 21px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 20px; }
+    .ProductInfoAndBuy__LongInfo ul {
+      margin-top: 15px;
+      list-style-type: none; }
+      .ProductInfoAndBuy__LongInfo ul li:not(:last-child) {
+        margin-bottom: 5px; }
+  .ProductInfoAndBuy__BuingForm {
+    margin-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e9ecef; }
+  .ProductInfoAndBuy__SelectColor {
+    display: flex;
+    gap: 25px;
+    font-size: 14px;
+    font-weight: 700; }
+    .ProductInfoAndBuy__SelectColor input {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 51%; }
+    .ProductInfoAndBuy__SelectColor input:checked::before {
+      outline: 1px solid #157efb;
+      outline-offset: 3px; }
+    .ProductInfoAndBuy__SelectColor input::before {
+      content: "";
+      position: relative;
+      top: -1px;
+      left: -1px;
+      z-index: 1;
+      display: block;
+      width: 22px;
+      height: 22px;
+      border-radius: 51%;
+      pointer-events: none; }
+    .ProductInfoAndBuy__SelectColor .gray::before {
+      background-color: #eee; }
+    .ProductInfoAndBuy__SelectColor .black::before {
+      background-color: #000; }
+    .ProductInfoAndBuy__SelectColor .blue::before {
+      background-color: #24c; }
+    .ProductInfoAndBuy__SelectColor .grin::before {
+      background-color: #ac2; }
+  .ProductInfoAndBuy__QTYbuttonAndLikeConteiner {
+    flex-basis: 40px;
+    flex-grow: 1;
+    max-width: 60%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; }
+  .ProductInfoAndBuy__QTY {
+    flex-basis: 40px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-size: 14px;
+    font-weight: 700; }
+  .ProductInfoAndBuy__QTYchoiser {
+    flex-grow: 8;
+    flex-basis: 40px;
+    min-height: 40px;
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e9ecef;
+    border-radius: 20px; }
+  .ProductInfoAndBuy__QTYchoiserNumber {
+    transform: translateX(10px);
+    max-width: 30px;
+    min-width: 30px;
+    pointer-events: none;
+    font-size: 14px;
+    font-weight: 400; }
+  .ProductInfoAndBuy__QTYchoiserPlusMinus {
     position: relative;
-    top: -1px;
-    left: -1px;
-    z-index: 1;
-    display: block;
-    width: 22px;
-    height: 22px;
-    border-radius: 51%;
-    pointer-events: none; }
-  .ProductInfoAndBuy__SelectColor .gray::before {
-    background-color: #eee; }
-  .ProductInfoAndBuy__SelectColor .black::before {
-    background-color: #000; }
-  .ProductInfoAndBuy__SelectColor .blue::before {
-    background-color: #24c; }
-  .ProductInfoAndBuy__SelectColor .grin::before {
-    background-color: #ac2; }
-.ProductInfoAndBuy__QTYbuttonAndLikeConteiner {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px; }
-.ProductInfoAndBuy__QTY {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  font-size: 14px;
-  font-weight: 700; }
-.ProductInfoAndBuy__QTYchoiser {
-  min-height: 40px;
-  width: 100%;
-  padding: 0 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #e9ecef;
-  border-radius: 20px; }
-.ProductInfoAndBuy__QTYchoiserNumber {
-  max-width: 30px;
-  min-width: 30px;
-  pointer-events: none;
-  font-size: 14px;
-  font-weight: 400; }
-.ProductInfoAndBuy__QTYchoiserPlusMinus {
-  font-size: 12px;
-  font-weight: 900;
-  cursor: pointer; }
-.ProductInfoAndBuy__Like {
-  min-width: 40px;
-  min-height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #e9ecef;
-  border-radius: 20px;
-  font-size: 15px;
-  font-weight: 900;
-  color: #aaa;
-  cursor: pointer; }
-.ProductInfoAndBuy__TechInfo {
-  margin-top: 20px;
-  line-height: 24px;
-  font-size: 14px;
-  color: #aaa; }
-.ProductInfoAndBuy__TechInfoStart {
-  color: #000;
-  font-weight: 700; }
-.ProductInfoAndBuy__TechInfoTag {
-  transition: color 0.5s; }
-  .ProductInfoAndBuy__TechInfoTag:hover {
-    color: #157efb; }
-  .ProductInfoAndBuy__TechInfoTag--Choised {
-    color: #157efb;
-    text-decoration: underline; }
+    z-index: 1000;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer; }
+  .ProductInfoAndBuy__Like {
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 900;
+    color: #aaa;
+    cursor: pointer; }
+  .ProductInfoAndBuy__TechInfo {
+    margin-top: 20px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #aaa; }
+  .ProductInfoAndBuy__TechInfoStart {
+    color: #000;
+    font-weight: 700; }
+  .ProductInfoAndBuy__TechInfoTag {
+    transition: color 0.5s; }
+    .ProductInfoAndBuy__TechInfoTag:hover {
+      color: #157efb; }
+    .ProductInfoAndBuy__TechInfoTag--Choised {
+      color: #157efb;
+      text-decoration: underline; }
 
 .ProductShotInfo {
   font-size: 10px; }
@@ -438,6 +451,7 @@ body {
     text-decoration-line: line-through; }
 
 .AddToCardButton {
+  flex-basis: 40px;
   flex-grow: 1;
   min-height: 40px;
   display: flex;

@@ -182,22 +182,6 @@ body {
       &:hover [class*="_HoldedMenuItems"]{
         display: block;
       }
-      // --jsActive
-      // &--jsActive .MainMenu__HoldedMenuItems {
-      //   display: block;
-      //   // visibility: visible;
-      //   // @media screen and (max-width: 990px){
-      //   //   display: none;
-      //   // }
-      // }
-      // &--jsActive > a {
-      //   // color: $color_3;
-      //   pointer-events: stroke;
-        
-      //   // @media screen and (max-width: 990px){
-      //   //   display: none;
-      //   // }
-      // }
     }
     // - для указания числа статей (в блоге)
     &--NumberOfStates {
@@ -400,6 +384,7 @@ body {
 .ProductFotoGalary {
   display: flex;
   gap: 20px;
+  max-width: 80%;
 
   // user-select: none;
 
@@ -427,14 +412,18 @@ body {
   // сам экран галереи:
   &__GalaryScreen {
     position: relative;
-    max-width: 100%;
+    max-width: 99%;
+    // max-height: 100%;
     overflow: hidden;
     @media screen and (max-width: 990px){
       max-height: 370px;
     }
+    @media screen and (max-width: 570px) {
+
+    }
   }
   &__GalaryScreenMovedConteiner {
-    // position: relative;
+    position: relative;
     object-fit: contain;
     max-width: 100%;
     max-height: 100%;
@@ -458,6 +447,7 @@ body {
 
 // блок описания товара с формой добавления заказа в карзину:
 .ProductInfoAndBuy {
+  max-width: 200px;
   &__LongInfo {
     margin-top: 25px;
     font-size: 14px;
@@ -523,7 +513,9 @@ body {
     }
   }
   &__QTYbuttonAndLikeConteiner {
-    // width: 100%;
+    flex-basis: 40px;
+    flex-grow: 1;
+    max-width: 60%;
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
@@ -531,6 +523,7 @@ body {
     gap: 20px;
   }
   &__QTY {
+    flex-basis: 40px;
     flex-grow: 1;
     // width: 100%;
     display: flex;
@@ -541,6 +534,8 @@ body {
     font-weight: 700;
   }
   &__QTYchoiser {
+    flex-grow: 8;
+    flex-basis: 40px;
     min-height: 40px;
     width: 100%;
     padding: 0 15px;
@@ -553,6 +548,7 @@ body {
     border-radius: 20px;
   }
   &__QTYchoiserNumber {
+    transform: translateX(10px);
     max-width: 30px;
     min-width: 30px;
     pointer-events: none;
@@ -560,6 +556,8 @@ body {
     font-weight: 400;
   }
   &__QTYchoiserPlusMinus {
+    position: relative;
+    z-index: 1000;
     font-size: 12px;
     font-weight: 900;
     cursor: pointer;
@@ -659,6 +657,7 @@ body {
 
 // блок кнопки добавления товара в карзину:
 .AddToCardButton {
+  flex-basis: 40px;
   flex-grow: 1;
   min-height: 40px;
   display: flex;
