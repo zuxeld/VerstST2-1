@@ -386,8 +386,10 @@ body {
   gap: 20px;
   max-width: 80%;
 
-  // user-select: none;
-
+  @media screen and (max-width: 570px){
+    max-width: 350px;
+  }
+  
   // панель выбора фото:
   &__FotoChoiser {
     display: flex;
@@ -419,21 +421,27 @@ body {
       max-height: 370px;
     }
     @media screen and (max-width: 570px) {
-
+      min-height: 450px;
     }
   }
   &__GalaryScreenMovedConteiner {
     position: relative;
     object-fit: contain;
     max-width: 100%;
+    min-width: 100%;
     max-height: 100%;
     display: flex;
     gap: 10px;
+    @media screen and (max-width: 570px) {
+      min-height: 100%
+    }
   }
   &__GalaryScreenItem {
     object-fit: contain;
     max-width: 100%;
     max-height: calc(100% + 30px);
+    // min-width: 0;
+    // min-height: 0;
     padding: 50px;
     user-select: none;
 

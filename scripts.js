@@ -72,6 +72,10 @@ class Slider {
         document.addEventListener('mousedown', this.onMouseDown.bind(this));
         document.addEventListener('mouseup', this.onMouseUp.bind(this));
         document.addEventListener('mousemove', this.onMouseMove.bind(this));
+        
+        document.addEventListener('touchstart', this.onMouseDown.bind(this));
+        document.addEventListener('touchend', this.onMouseUp.bind(this));
+        document.addEventListener('touchmove', this.onMouseMove.bind(this));
 
         document.addEventListener('click', this.onClick.bind(this));
 
@@ -80,7 +84,9 @@ class Slider {
         if (!(event.target.tagName == 'IMG' &&
         event.target.parentElement.classList.contains(this.movedImgConteinerClass))) return;
         this.isMouseDown = true;
-        this.lastclientX = event.clientX;
+        this.lastclientX = event.clientX ? event.clientX : event.changedTouches[0].clientX;
+        console.log(event.changedTouches[0].clientX);
+        // debugger;
         this.currentItem = +event.target.dataset.itemnum;
         this.imgWidth = event.target.offsetWidth;
     }
@@ -97,7 +103,11 @@ class Slider {
     }
     onMouseMove(event) {
         if (!this.isMouseDown === true) return;
-        this.mouseXchange = this.lastclientX - event.clientX;
+        if (event.clientX) {
+            this.mouseXchange = this.lastclientX - event.clientX;
+        } else {
+            this.mouseXchange = this.lastclientX - event.changedTouches[0].clientX;
+        }
         let isMovingOut = ((this.currentItem <= 0) && this.mouseXchange < 0) ||
         (this.currentItem >= this.movedImgConteiner.children.length - 1);
         let koef = isMovingOut ? 0.4 : 1;
